@@ -1,14 +1,13 @@
 *{
+	/* Chọn font Oswald từ Google Fonts */
 	box-sizing: border-box;
 	font-family: 'Oswald', sans-serif;
-
 }
 
 header{
 	background-color: white;
 	position: relative;
 	height: 180px;
-
 }
 
 nav{
@@ -16,7 +15,7 @@ nav{
 	position: absolute;
 	height: 40px;
 	padding:10px;
-	margin-top: 0px;
+	/* Di chuyển thanh menu */
     right: 0px;
     left: 0px;
     bottom: 0px;
@@ -24,7 +23,7 @@ nav{
 }
 
 nav ul{
-
+/* Di chuyển các phần tử trong thanh menu */
   position: absolute;
 	margin: 0px;
 	top :20%;
@@ -34,11 +33,13 @@ nav ul{
 }
 
 nav ul li{
+	/* Làm cho các phần tử trong menu ngang hàng */
 	display: inline-block;
 	padding-right: 50px;
 }
 
 li a,.signUp a{
+
 	text-decoration: none;
 	color:white;
 
@@ -77,6 +78,7 @@ section{
 }
 
 .phim{
+	/* Ô chứa phim */
 	height: 300px;
 	width: 200px;
 	display: inline-block;
@@ -92,7 +94,7 @@ section{
 }
 
 .phim-container{
-	/* Temporary centering for unresponsive web */
+	/* Temporary usage */
 	margin-left: 10%;
 	position: relative;
 }
