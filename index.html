@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<title>MilkyWay Cinema</title>
-		<meta charset="utf-8">
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,600&amp;subset=vietnamese" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<img class="logo" src ="logo.png">
-			<nav>
+			<nav class="menu">
 				<ul>
 					<li><a href="#">TRANG CHỦ</a></li>
 					<li><a href="#">PHIM</a></li>
@@ -19,15 +19,21 @@
 					<li><a href="#">KHUYẾN MÃI</a></li>
 					<li><a href="#">LIÊN HỆ</a></li>
 				</ul>
-		</nav>
-		<div class="signUp">
-			<a href ="#">Đăng Kí</a>
-			<a href ="#">Đăng Nhập</a>
-		</div>
+			</nav>
+			<div class="profile icon"></div>
+			<div class="signUp">
+				<a href ="#">Đăng Kí</a>
+				<a href ="#">Đăng Nhập</a>
+			</div>
 		</header>
 		<main>
 			<section>
 				<h2>Phim Đang Chiếu</h2>
+				<div class ="current movies main">
+					<div class ="current movies">Terminator 2</div>
+					<div class ="current movies">El matador</div>
+					<div class ="current movies">Calculator</div>
+				</div>
 			</section>
 			<section>
 				<h2>Tin tức</h2>
@@ -39,7 +45,14 @@
 		</main>
 		<footer>
 			<p>Công ty TNHH Rạp Chiếu Phim Ngân Hà ™</p>
-			<p>Liên Hệ</p>
+
+			<div class ="contacts">
+				<p>Liên Hệ</p>
+				<div class = "contacts icon">
+					<a href ="#"><img class="contacts facebook icon" src = "facebook-icon1.png"></a>
+					<a href ="#"><img class="contacts instagram icon" src = "instagram-logo.png"></a>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>
