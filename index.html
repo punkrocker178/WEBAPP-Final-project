@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<!-- Font lấy từ Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,600&amp;subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	</head>
 
 	<body>
@@ -18,13 +19,13 @@
 			<!-- Navigation bar/Thanh menu -->
 			<nav>
 				<ul>
-					<li><a href="#">TRANG CHỦ</a></li>
+					<li><a href="index.html">TRANG CHỦ</a></li>
 					<li><a href="#">PHIM</a></li>
 					<li><a href="#">LỊCH CHIẾU</a></li>
 					<li><a href="#">RẠP & GIÁ VÉ</a></li>
 					<li><a href="#">TIN TỨC</a></li>
 					<li><a href="#">KHUYẾN MÃI</a></li>
-					<li><a href="#">LIÊN HỆ</a></li>
+					<li><a href="lienhe.html">LIÊN HỆ</a></li>
 				</ul>
 		</nav>
 
@@ -36,10 +37,38 @@
 		</header>
 
 		<main>
+			<form>
+				<label for="movie">Chọn Phim</label>
+				<select name="movie" id="movie">
+					<option value="The Nun">The Nun</option>
+					<option value="Annabelle">Annabelle</option>
+					<option value="Annabelle2">Annabelle2</option>
+				</select>
 
+				<label for="cinema">Chọn Rạp</label>
+				<select name="cinema" id="cinema">
+					<option value="Rạp 1">Rạp 1</option>
+					<option value="Rạp 2">Rạp 2</option>
+					<option value="Rạp 3">Rạp 3</option>
+				</select>
+
+				<label for="date">Chọn Ngày</label>
+				<select name="date" id="date">
+					<option value="nay">Hôm nay</option>
+					<option value="mai">Ngày mai</option>
+					<option value="mot">Ngày mốt</option>
+				</select>
+			</form>
+			<div class="banner">
+				<img class ="banner" src="images/dolby1.jpg">
+			</div>
 			<section class="dang-chieu">
 				<h2>Phim Đang Chiếu</h2>
+				<!-- <iframe width="480" height="360" src="https://www.youtube.com/embed/6ZfuNTqbHE8"
+				frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+			<iframe width="480" height="360" src="https://www.youtube.com/embed/HsMFcQlxwKs"
+			frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 				<div class="phim-container">
 					<div class="phim a">
 						<a href=""><img class="phim pic" src="images/johnWick.jpeg"></a>
@@ -48,33 +77,30 @@
 						<a href=""><img class="phim pic" src="images/venom.jpg"></a>
 					</div>
 					<div class="phim c">
-						<a href=""><img class="phim pic" src="images/terminator.jpg"></a>
+						<a href=""><img class="phim pic" src="images/terminator2.jpg"></a>
 					</div>
 				</div>
 			</section>
 
 			<section>
 				<h2>Tin tức</h2>
-					<a href="">The Nun ra mắt khán giả</a>
-					<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+					<article>
+						<a href="">The Nun ra mắt khán giả</a>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
 						Nulla facilisi. Morbi volutpat ut ante vitae consectetur. Vivamus faucibus libero purus, sit amet tempor tortor laoreet sit amet.
 						Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt tellus.
-						Proin imperdiet, augue sit amet laoreet rutrum, lectus orci congue ligula, in sollicitudin lectus ligula sit amet nunc.
-						In viverra rutrum volutpat. Aliquam erat volutpat. Aliquam a maximus ex, eu accumsan mauris.
-						Nulla at est magna. Nunc pharetra odio a odio posuere, et viverra ante lacinia.
-						Nam fermentum mattis metus, eget vestibulum ante ultricies at. Quisque blandit dictum tortor pellentesque gravida. Vestibulum mollis dolor vitae ante scelerisque vulputate.
-						Ut ut blandit mauris, et facilisis turpis. Nam ut dictum eros.
-						Mauris luctus eget nibh sit amet ullamcorper. Vestibulum ac sem risus.
-						Cras et leo pretium, scelerisque est at, condimentum tellus. Maecenas gravida tristique consectetur.
-						Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-						Nam porta risus id felis accumsan consequat in eu massa.
-						Nam feugiat eros non libero vehicula commodo quis id leo.
-						Donec sodales fermentum est eu tempor. Integer vitae rhoncus ligula. Mauris rutrum lacinia luctus.
-						Donec pretium sit amet lectus in convallis. Phasellus mi ipsum, mattis id ornare eu, gravida ut mauris.
-						Integer viverra tristique maximus. Cras bibendum dolor ex, sit amet egestas lectus placerat at. Nulla quis orci justo. Aliquam nec ligula nec diam dictum commodo mollis porttitor orci. Donec diam felis, cursus eu dignissim at, venenatis ac elit. Fusce sit amet blandit odio, at congue ipsum.
-						Suspendisse ut sodales orci. Suspendisse et dignissim nisi, id lacinia felis.
-						Nullam accumsan ex purus, vitae convallis nibh tincidunt semper. Nunc enim dolor, blandit faucibus risus et, aliquam egestas ex. Nam iaculis efficitur odio, non mattis turpis volutpat vitae. Nulla posuere finibus posuere. Maecenas suscipit, orci ut malesuada cursus, mauris odio feugiat enim, vitae dignissim urna sem vel sem.
+						</p>
+					</article>
+					<article>
+						<a href="">Annabelle sau khi sử dụng camera Xiaomi </a>
+						<p>Cô giờ đây đẹp lộng lẫy. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</article>
 			</section>
 
