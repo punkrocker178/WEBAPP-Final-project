@@ -79,14 +79,22 @@ section{
 .phim{
 	height: 300px;
 	width: 200px;
-	border: 1px solid black;
 	display: inline-block;
 	margin:30px;
+
+}
+ .phim .pic{
+	height: 300px;
+	width:auto;
+	position: inherit;
+	margin: 0px;
+	border: 1px solid black;
 }
 
 .phim-container{
 	/* Temporary centering for unresponsive web */
-	margin-left: 15%;
+	margin-left: 10%;
+	position: relative;
 }
 
 footer{
@@ -94,5 +102,4 @@ footer{
 	color : white;
 	position: relative;
 	bottom: 0px;
-
 }
