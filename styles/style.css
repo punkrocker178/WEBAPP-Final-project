@@ -101,42 +101,29 @@ h2,p,article>a{
 	margin-left: 5%;
 }*/
 
-select{
+
+
+.chonPhim select,label{
 	margin:20px;
 	margin-left: 20px;
+	width: 100%;
 }
 
 .phim{
 	/* Ô chứa phim */
-	height: 300px;
-	width: 200px;
-	/*display: inline-block;*/
-	/*margin:30px;*/
-
-}
-
-.phim a:hover{
-	background-color: black;
+	margin-bottom: 1em;
+	padding-left: 0px;
+	padding-right: 0px;
 	width: 100%;
-	height: 100%;
+	height: auto;
+
 }
 
- .phim .pic{
-	height: 300px;
-	width:auto;
+ .pic{
+	height: 30em;
+	width: 100%;
 	margin: 0px;
 	border: 1px solid black;
-}
-
-.phim-container{
-	/* Temporary usage */
-	margin-left: 10%;
-	position: relative;
-}
-
-.empty-row{
-	height: 1em;
-	width: 100%;
 }
 
 footer{

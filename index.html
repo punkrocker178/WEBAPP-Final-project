@@ -7,8 +7,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Liên kết với file CSS -->
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+		<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link rel="stylesheet" href="styles/float-grid.css">
+		
+		
+
 		<!-- Font lấy từ Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,600&amp;subset=vietnamese" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -38,7 +43,7 @@
 		</header>
 
 		<main>
-			<div class="row">
+			<div class="row chonPhim">
 			<form>
 
 				<div class="col-4">
@@ -75,46 +80,34 @@
 			</div>
 			<section class="dang-chieu">
 				<h2>Phim Đang Chiếu</h2>
-				<!-- <iframe width="480" height="360" src="https://www.youtube.com/embed/6ZfuNTqbHE8"
-				frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-				<iframe width="480" height="360" src="https://www.youtube.com/embed/HsMFcQlxwKs"
-				frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
-				<!-- <div class="phim-container"> -->
-					<div class="row">
-					<div class="phim a col-4">
+				<div class="row">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/johnWick.jpeg"></a>
 					</div>
-					<div class="phim b col-4">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/venom.jpg"></a>
 					</div>
-					<div class="phim c col-4">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/terminator2.jpg"></a>
 					</div>
-					</div>
-					
-					<div class="empty-row"></div>
-
-					<div class="row">
-						<div class="phim a col-4">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/predator.jpg"></a>
 					</div>
-					<div class="phim b col-4">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/the nun.jpg"></a>
 					</div>
-					<div class="phim c col-4">
+					<div class="phim col-4">
 						<a href=""><img class="phim pic" src="images/movie/the_greatestshowman.jpg"></a>
 					</div>
-					</div>
-				<!-- </div> -->
-
+				</div>
+				
 			</section>
 
 			<section>
 				<h2>Tin tức</h2>
 
-					<article>
+					<article class="col-6">
 						<a href="">The Nun ra mắt khán giả</a>
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -123,7 +116,7 @@
 						Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt tellus.
 						</p>
 					</article>
-					<article>
+					<article class="col-6">
 						<a href="">Annabelle sau khi sử dụng camera Xiaomi </a>
 						<p>Cô giờ đây đẹp lộng lẫy. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
