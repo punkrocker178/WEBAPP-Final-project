@@ -79,8 +79,11 @@ li a,.signUp a{
 }
 
 .banner{
+	max-width: 1000px;
 	width: 100%;
 	height: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 body{

@@ -7,12 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Liên kết với file CSS -->
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link rel="stylesheet" href="styles/float-grid.css">
-		
-		
+
+
 
 		<!-- Font lấy từ Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,600&amp;subset=vietnamese" rel="stylesheet">
@@ -20,7 +20,7 @@
 	</head>
 
 	<body>
-		<header>	
+		<header>
 				<img class="logo" src ="images/logo.png">
 			<!-- Navigation bar/Thanh menu -->
 			<nav>
@@ -43,10 +43,11 @@
 		</header>
 
 		<main>
-			<div class="row chonPhim">
-			<form>
+			<div class="container-fluid chonPhim">
 
-				<div class="col-4">
+			<form>
+				<div class="row">
+				<div class="col-md-4">
 				<label for="movie">Chọn Phim</label>
 				<select name="movie" id="movie">
 					<option value="The Nun">The Nun</option>
@@ -55,7 +56,7 @@
 				</select>
 				</div>
 
-				<div class="col-4">
+				<div class="col-md-4">
 				<label for="cinema">Chọn Rạp</label>
 				<select name="cinema" id="cinema">
 					<option value="Rạp 1">Rạp 1</option>
@@ -64,7 +65,7 @@
 				</select>
 				</div>
 
-				<div class="col-4">
+				<div class="col-md-4">
 				<label for="date">Chọn Ngày</label>
 				<select name="date" id="date">
 					<option value="nay">Hôm nay</option>
@@ -74,40 +75,45 @@
 				</div>
 
 			</form>
+		</div>
+	</div>
 			<div class="banner">
 				<img class ="banner" src="images/cinema/dolby1.jpg">
 			</div>
-			</div>
-			<section class="dang-chieu">
-				<h2>Phim Đang Chiếu</h2>
 
-				<div class="row">
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/johnWick.jpeg"></a>
-					</div>
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/venom.jpg"></a>
-					</div>
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/terminator2.jpg"></a>
-					</div>
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/predator.jpg"></a>
-					</div>
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/the nun.jpg"></a>
-					</div>
-					<div class="phim col-4">
-						<a href=""><img class="phim pic" src="images/movie/the_greatestshowman.jpg"></a>
+			<section class="dang-chieu">
+				<div class="container">
+					<h2>Phim Đang Chiếu</h2>
+					<div class="row">
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/johnWick.jpeg"></a>
+						</div>
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/venom.jpg"></a>
+						</div>
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/terminator2.jpg"></a>
+						</div>
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/predator.jpg"></a>
+						</div>
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/the nun.jpg"></a>
+						</div>
+						<div class="phim col-md-4">
+							<a href=""><img class="img-fluid" src="images/movie/the_greatestshowman.jpg"></a>
+						</div>
 					</div>
 				</div>
-				
+
 			</section>
 
 			<section>
-				<h2>Tin tức</h2>
+				<div class="container">
 
-					<article class="col-6">
+					<h2>Tin tức</h2>
+					<div class="row">
+					<article class="col-md">
 						<a href="">The Nun ra mắt khán giả</a>
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -116,7 +122,7 @@
 						Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt tellus.
 						</p>
 					</article>
-					<article class="col-6">
+					<article class="col-md">
 						<a href="">Annabelle sau khi sử dụng camera Xiaomi </a>
 						<p>Cô giờ đây đẹp lộng lẫy. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -124,12 +130,17 @@
 							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 							sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</article>
+				</div>
+				</div>
 			</section>
 
 			<section>
+				<div class="container">
 				<h2>Khuyến Mãi</h2>
+			</div>
 			</section>
 			<section>
+				<div class="container">
 				<h2>Giới thiệu</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
@@ -149,7 +160,9 @@
 					Donec pretium sit amet lectus in convallis. Phasellus mi ipsum, mattis id ornare eu, gravida ut mauris.
 					Integer viverra tristique maximus. Cras bibendum dolor ex, sit amet egestas lectus placerat at. Nulla quis orci justo. Aliquam nec ligula nec diam dictum commodo mollis porttitor orci. Donec diam felis, cursus eu dignissim at, venenatis ac elit. Fusce sit amet blandit odio, at congue ipsum.
 					Suspendisse ut sodales orci. Suspendisse et dignissim nisi, id lacinia felis.
-					Nullam accumsan ex purus, vitae convallis nibh tincidunt semper. Nunc enim dolor, blandit faucibus risus et, aliquam egestas ex. Nam iaculis efficitur odio, non mattis turpis volutpat vitae. Nulla posuere finibus posuere. Maecenas suscipit, orci ut malesuada cursus, mauris odio feugiat enim, vitae dignissim urna sem vel sem.</p>
+					Nullam accumsan ex purus, vitae convallis nibh tincidunt semper. Nunc enim dolor, blandit faucibus risus et, aliquam egestas ex. Nam iaculis efficitur odio, non mattis turpis volutpat vitae.
+					Nulla posuere finibus posuere. Maecenas suscipit, orci ut malesuada cursus, mauris odio feugiat enim, vitae dignissim urna sem vel sem.</p>
+					</div>
 			</section>
 		</main>
 
