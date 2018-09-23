@@ -27,7 +27,7 @@
 		<header>
 				<img class="logo" src ="images/logo.png">
 			<!-- Navigation bar/Thanh menu -->
-			<nav>
+			<!-- <nav>
 				<ul>
 					<li><a href="index.html">TRANG CHỦ</a></li>
 					<li><a href="#">PHIM</a></li>
@@ -37,7 +37,41 @@
 					<li><a href="#">KHUYẾN MÃI</a></li>
 					<li><a href="lienhe.html">LIÊN HỆ</a></li>
 				</ul>
-		</nav>
+		</nav> -->
+
+			<nav class="navbar navbar-expand-md navbar-dark">
+  			<!-- Toggler/collapsibe Button -->
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   			 <span class="navbar-toggler-icon"></span>
+  			</button>
+
+ 			 <!-- Navbar links -->
+  			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    			<ul class="navbar-nav">
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">TRANG CHỦ</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">PHIM</a>
+      			</li>
+     			<li class="nav-item">
+        			<a class="nav-link" href="#">LỊCH CHIẾU</a>
+      			</li> 
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">RẠP & GIÁ VÉ</a>
+      			</li> 
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">TIN TỨC</a>
+      			</li> 
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">KHUYẾN MÃI</a>
+      			</li> 
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">GIỚI THIỆU</a>
+      			</li> 
+    			</ul>
+  			</div> 
+			</nav>
 
 		<div class="signUp">
 			<a  href ="#">Đăng Kí</a>
@@ -47,7 +81,6 @@
 		</header>
 
 		<main>
-
 			<div class="container chonPhim">
 			<form>
 				<div class="row">
@@ -122,22 +155,27 @@
 					<div class="row">
 						<div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/AvengersResized.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 						<div class="phim col-md-4 col-sm-6">
-
 							<a href=""><img class="img-fluid rounded" src="images/movie/solo.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 						<div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/wreckitralph2.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 						<div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/predator.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 						<div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/the nun.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 						<div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/the_greatestshowman.jpg"></a>
+							<h4>Avengers:Infinity War</h4>
 						</div>
 					</div>
 				</div>
@@ -150,7 +188,8 @@
 					<h2>Tin tức</h2>
 					<div class="row">
 					<article class="col-md-6">
-						<a href="">The Nun ra mắt khán giả</a>
+						<a href="">Bộ mặt thật của ác quỷ ma sơ Valak</a>
+						<img src="News/bonnie.jpg" alt="bonnie aarons" class="img-thumbnail">
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
@@ -159,13 +198,14 @@
 						</p>
 					</article>
 					<article class="col-md-6">
-						<a href="">Annabelle sống ảo </a>
-						<span><img src="News/annabelle.png" alt="filter meme" class="img-thumbnail"></span>
-						<span><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.</p></span>
+						<a href="">Annabelle lung linh trên mxh</a>
+						<img src="News/annabelle.png" alt="filter meme" class="img-thumbnail">
+						<p>
+						 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+						sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</article>
 				</div>
 				</div>
@@ -204,11 +244,15 @@
 		</main>
 
 		<footer>
-			<span>
+			<span class="left">
 			Công ty TNHH Rạp Chiếu Phim Ngân Hà ™
 			</span>
-			<span>
+			<span class="right">
 			Liên Hệ
+			<div class="icons">
+				<span><a href=""><img class="icons" src="images/facebook.png" alt=""></a></span>
+				<span><a href=""><img class="icons" src="images/instagram.png" alt=""></a></span>
+			</div>
 			</span>
 		</footer>
 	</body>

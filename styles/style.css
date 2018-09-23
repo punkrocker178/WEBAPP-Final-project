@@ -10,33 +10,21 @@ header{
 	background-color: white;
 /*	position: relative;*/
 	height: 180px;
+	margin-bottom: 	1em;
 }
 
 nav{
 	background-color: black;
-	position: absolute;
-	height: 40px;
-	padding:10px;
-	/* Di chuyển thanh menu */
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
-    top: 130px;
+
 }
 
 nav ul{
 /* Di chuyển các phần tử trong thanh menu */
-  /*position: absolute;*/
   	display: block;
 	margin-left:auto;
 	margin-right: auto;
 	margin-top:0px;
 	margin-bottom: 0px;
-	width: 50%;
-
-/*	top :20%;
-/*	left:25%;*/
-	padding-left: 5%;
 
 }
 
@@ -45,7 +33,7 @@ nav ul li{
 	display: inline-block;
 
 	/*Khoảng cách giữa các phần tử*/
-	padding-right: 50px;
+	padding-right: 1em;
 }
 
 li a,.signUp a{
@@ -99,7 +87,7 @@ body{
 }
 
 h2,p,article>a{
-	margin: 2em;
+	margin: 1em;
 }
 
 .chonPhim select,label{
@@ -108,20 +96,23 @@ h2,p,article>a{
 	width: 100%;
 }
 
+.card{
+
+}
+
 .phim{
 	/* Ô chứa phim */
 	/*margin: 10px;
 	padding-left: 0px;
 	padding-right: 0px;*/
 	width: 100%;
-	padding:1em;
 	height: auto;
+	padding:1em;
 }
 
 .phim:hover {
 	opacity: 0.5;
-	/*background-color: #000*/
-	
+	/*background-color: #000*/	
 }
 
  .pic{
@@ -131,20 +122,49 @@ h2,p,article>a{
 	border: 1px solid black;
 }
 
+.img-thumbnail{
+	height: 240px;
+	width: auto;
+	display: block;
+}
+
 footer{
 	background-color: black;
 	color : white;
 	position: relative;
 	bottom: 0px;
+	height: 80px;
 }
 
-/*footer .left{
-	position: relative;
-	left:0px;
+footer .left{
+	position: absolute;
+	left:20px;
+	top:10px;
 }
 
 footer .right{
-	position: relative;
-	right: 10px;
+	position: absolute;
+	top:10px;
+	right: 40px;
 }
-*/
+
+.icons{
+	width: auto;
+	height: 2em;
+	padding-right: 0.5em;
+	padding-top:0.2em;
+}
+
+@media only screen and (max-width: 600px) {
+   footer .left{
+	display: block;
+	position: static;
+	padding-left: 1em;
+}
+
+footer .right{
+	display: block;
+	position: static;
+	padding-left: 1em;
+}
+}
