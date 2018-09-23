@@ -68,7 +68,7 @@ li a,.signUp a{
 }
 
 .logo{
-	max-width: 10%;
+	width: 10%;
 	height: auto;
 	/*position: absolute;*/
 	display: block;
@@ -80,10 +80,14 @@ li a,.signUp a{
 
 .banner{
 	max-width: 1000px;
-	width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.banner img{
+	width: 100%;
+	height: auto;
 }
 
 body{
@@ -98,14 +102,6 @@ h2,p,article>a{
 	margin: 2em;
 }
 
-
-
-/*section{
-	margin-left: 5%;
-}*/
-
-
-
 .chonPhim select,label{
 	margin:20px;
 	margin-left: 20px;
@@ -114,12 +110,18 @@ h2,p,article>a{
 
 .phim{
 	/* Ô chứa phim */
-	margin-bottom: 1em;
+	/*margin: 10px;
 	padding-left: 0px;
-	padding-right: 0px;
+	padding-right: 0px;*/
 	width: 100%;
+	padding:1em;
 	height: auto;
+}
 
+.phim:hover {
+	opacity: 0.5;
+	/*background-color: #000*/
+	
 }
 
  .pic{
@@ -135,3 +137,14 @@ footer{
 	position: relative;
 	bottom: 0px;
 }
+
+/*footer .left{
+	position: relative;
+	left:0px;
+}
+
+footer .right{
+	position: relative;
+	right: 10px;
+}
+*/
