@@ -96,30 +96,23 @@ h2,p,article>a{
 	width: 100%;
 }
 
-.card{
-
-}
-
 .phim{
 	/* Ô chứa phim */
-	/*margin: 10px;
-	padding-left: 0px;
-	padding-right: 0px;*/
 	width: 100%;
 	height: auto;
 	padding:1em;
 }
 
-.phim:hover {
-	opacity: 0.5;
-	/*background-color: #000*/	
+.phim img:hover {
+	filter: brightness(0.5);
+	transition: 0.5s;
 }
 
- .pic{
-	height: 30em;
-	width: 100%;
-	margin: 0px;
-	border: 1px solid black;
+.btn{
+	display: none;
+	position: absolute;
+	left: 40%;
+	top: 45%;
 }
 
 .img-thumbnail{
