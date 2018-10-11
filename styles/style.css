@@ -103,19 +103,11 @@ h2, p, article>a {
   transition: 0.5s;
 }
 
-<<<<<<< HEAD
 .butt{
 	display: none;
 	position: absolute;
 	left: 40%;
 	top: 45%;
-=======
-.btn {
-  display: none;
-  position: absolute;
-  left: 40%;
-  top: 45%;
->>>>>>> 758af86abbae97f5443fc643efc473b94d54b887
 }
 
 .img-thumbnail {
