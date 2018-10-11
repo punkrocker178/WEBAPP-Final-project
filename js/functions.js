@@ -5,6 +5,6 @@ $(document).ready(function(){
 	});
 
 	$(".phim").mouseleave(function(){
-		$(".btn").css("display","none");
+		$(".butt").css("display","none");
 	});
 });
