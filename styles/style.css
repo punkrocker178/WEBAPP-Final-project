@@ -1,163 +1,166 @@
-*,footer>p{
-	/* Chọn font Oswald từ Google Fonts */
-	box-sizing: border-box;
-	font-family: 'Oswald', sans-serif;
-}
-p{
-	font-family: 'Open Sans', sans-serif;
-}
-header{
-	background-color: white;
-/*	position: relative;*/
-	height: 180px;
-	margin-bottom: 	1em;
+*, footer>p {
+  /* Chọn font Oswald từ Google Fonts */
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
-nav{
-	background-color: black;
-
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
-nav ul{
-/* Di chuyển các phần tử trong thanh menu */
-  	display: block;
-	margin-left:auto;
-	margin-right: auto;
-	margin-top:0px;
-	margin-bottom: 0px;
-
+header {
+  background-color: white;
+  /*	position: relative;*/
+  height: 180px;
+  margin-bottom: 1em;
 }
 
-nav ul li{
-	/* Làm cho các phần tử trong menu ngang hàng */
-	display: inline-block;
-
-	/*Khoảng cách giữa các phần tử*/
-	padding-right: 1em;
+nav {
+  background-color: black;
 }
 
-li a,.signUp a{
-
-	text-decoration: none;
-	color:white;
-
-
+nav ul {
+  /* Di chuyển các phần tử trong thanh menu */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-.signUp{
-	position: absolute;
-	right: 35px;
-	top: 20px;
+nav ul li {
+  /* Làm cho các phần tử trong menu ngang hàng */
+  display: inline-block;
+  /*Khoảng cách giữa các phần tử*/
+  padding-right: 1em;
+}
+
+li a, .signUp a {
+  text-decoration: none;
+  color: white;
+}
+
+.signUp {
+  position: absolute;
+  right: 35px;
+  top: 20px;
 }
 
 .signUp a {
-	color: black;
-	padding-left: 10px;
+  color: black;
+  padding-left: 10px;
 }
 
-.logo{
-	width: 10%;
-	height: auto;
-	/*position: absolute;*/
-	display: block;
-	margin-left:auto;
-	margin-right:auto;
-/*	left: 45%;*/
-
+.logo {
+  width: 10%;
+  height: auto;
+  /*position: absolute;*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*	left: 45%;*/
 }
 
-.banner{
-	max-width: 1000px;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
+.banner {
+  max-width: 1000px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.banner img{
-	width: 100%;
-	height: auto;
+.banner img {
+  width: 100%;
+  height: auto;
 }
 
-body{
-	background-color:white;
-	margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+body {
+  background-color: white;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 
-h2,p,article>a{
-	margin: 1em;
+h2, p, article>a {
+  margin: 1em;
 }
 
-.chonPhim select,label{
-	margin:20px;
-	margin-left: 20px;
-	width: 100%;
+.chonPhim select, label {
+  margin: 20px;
+  margin-left: 20px;
+  width: 100%;
 }
 
-.phim{
-	/* Ô chứa phim */
-	width: 100%;
-	height: auto;
-	padding:1em;
+.phim {
+  /* Ô chứa phim */
+  width: 100%;
+  height: auto;
+  padding: 1em;
 }
 
 .phim img:hover {
-	filter: brightness(0.5);
-	transition: 0.5s;
+  filter: brightness(0.5);
+  transition: 0.5s;
 }
 
+<<<<<<< HEAD
 .butt{
 	display: none;
 	position: absolute;
 	left: 40%;
 	top: 45%;
+=======
+.btn {
+  display: none;
+  position: absolute;
+  left: 40%;
+  top: 45%;
+>>>>>>> 758af86abbae97f5443fc643efc473b94d54b887
 }
 
-.img-thumbnail{
-	height: 240px;
-	width: auto;
-	display: block;
+.img-thumbnail {
+  height: 240px;
+  width: auto;
+  display: block;
 }
 
-footer{
-	background-color: black;
-	color : white;
-	position: relative;
-	bottom: 0px;
-	height: 80px;
+footer {
+  background-color: black;
+  color: white;
+  position: relative;
+  bottom: 0px;
+  height: 80px;
 }
 
-footer .left{
-	position: absolute;
-	left:20px;
-	top:10px;
+footer .left {
+  position: absolute;
+  left: 20px;
+  top: 10px;
 }
 
-footer .right{
-	position: absolute;
-	top:10px;
-	right: 40px;
+footer .right {
+  position: absolute;
+  top: 10px;
+  right: 40px;
 }
 
-.icons{
-	width: auto;
-	height: 2em;
-	padding-right: 0.5em;
-	padding-top:0.2em;
+.icons {
+  width: auto;
+  height: 2em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
 }
 
 @media only screen and (max-width: 600px) {
-   footer .left{
-	display: block;
-	position: static;
-	padding-left: 1em;
-}
+  footer .left {
+    display: block;
+    position: static;
+    padding-left: 1em;
+  }
 
-footer .right{
-	display: block;
-	position: static;
-	padding-left: 1em;
-}
+  footer .right {
+    display: block;
+    position: static;
+    padding-left: 1em;
+  }
 }
