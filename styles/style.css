@@ -12,7 +12,7 @@ header {
   background-color: white;
   /*	position: relative;*/
   height: 180px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 nav {
@@ -85,10 +85,25 @@ h2, p, article>a {
   margin: 1em;
 }
 
-.chonPhim select, label {
-  margin: 20px;
-  margin-left: 20px;
-  width: 100%;
+.chonPhim select, .chonPhim label {
+	margin-bottom: 1em;
+  	width: 100%;
+}
+
+.modal-body input{
+	padding: 0.4em;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.modal-body{
+	padding: 1.5em;
+}
+
+.mua-ve{
+	display: block;
+	margin: auto;
+	margin-bottom: 1em;
 }
 
 .phim {
