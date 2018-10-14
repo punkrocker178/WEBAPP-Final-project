@@ -1,0 +1,75 @@
+			<!-- Login Modal -->
+			<div class="modal fade" id="loginModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Đăng Nhập</h4>
+						</div>
+						<form action="http://127.0.0.1/test.php" method="post" onsubmit="">
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="userID">Email</label>
+									<input type="email" class="form-control" name="userID" id="userID" required>
+								</div>
+								<div class="form-group">
+									<label for="passWord">Mật khẩu</label>
+									<input type="password" class="form-control" name="password" id="password" required>
+								</div>
+								<a href="#">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-success col-sm-12" type="submit">Đăng Nhập</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Register Modal -->
+			<div class="modal fade" id="registerModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Đăng Ký</h4>
+						</div>
+						<form action="http://127.0.0.1/test.php" method="post" onsubmit="">
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="userID">Email</label>
+									<input type="email" class="form-control" name="userIDRegister" id="userIDRegister" required>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-9">
+											<label for="name">Họ tên</label>
+											<input type="text" class="form-control" name="name" id="name" required>
+										</div>
+										<div class="col-sm-3">
+											<label for="gender">Giới tính</label>
+											<select name="gender" id="gender" class="form-control" required>
+												<option value="nam">Nam</option>
+												<option value="nu">Nữ</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="birth">Ngày sinh</label>
+									<input type="date" id ="birth" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label for="passWord">Mật khẩu</label>
+									<input type="password" class="form-control" name="passwordRegister" id="passwordRegister" required>
+								</div>
+								<div class="form-group">
+									<label for="passWord">Xác nhận mật khẩu</label>
+									<input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" required>
+								</div>
+								
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-success col-sm-12" type="submit">Đăng Ký</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>

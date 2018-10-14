@@ -102,3 +102,4 @@
 				<a data-toggle="modal" href ="#loginModal">Đăng Nhập</a>
 			</div>
 		</header>
+		<?php require "modal.html" ?>
