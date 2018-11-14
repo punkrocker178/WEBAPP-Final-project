@@ -1,7 +1,5 @@
 <?php
 	$page = "Rạp & Giá vé";
-	$fileDir = basename(__DIR__);
-	echo basename(__DIR__);
 	include('includes/header.php');
 ?>
 <main>

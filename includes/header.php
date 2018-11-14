@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<?php
-
+			session_start();
 			$css = "styles/style.css";
 			$javascript = "js/functions.js";
 			$icon = "images/logo.png";
@@ -71,8 +71,18 @@
 				</div>
 			</nav>
 			<div class="signUp">
-				<a data-toggle="modal" href ="#registerModal">Đăng Kí</a>
-				<a data-toggle="modal" href ="#loginModal">Đăng Nhập</a>
+			<?php 
+				if(isset($_SESSION['username'])){
+					$username = $_SESSION['username'];
+					echo "<a href='#'>$username</a>";
+					echo "<a href=\"logout.php\">Log out</a>";
+				}else{
+					echo "<a data-toggle=\"modal\" href =\"#registerModal\">Đăng Kí</a>";
+					echo "<a data-toggle=\"modal\" href =\"#loginModal\">Đăng Nhập</a>";
+					require "modal.html";
+				}
+				 ?>
+				
 			</div>
 		</header>
-		<?php require "modal.html" ?>
+		

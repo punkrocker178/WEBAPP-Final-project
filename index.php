@@ -1,13 +1,10 @@
 <?php 
 	$page = "Milkyway Cinema";
-	$fileDir = basename(__DIR__);
-	echo basename(__DIR__);
-
+	include("model/model.php");
 	include('includes/header.php');
-
+	
 ?> 
 		<main>
-
 			<!-- <div class="container chonPhim">
 				<form action="http://127.0.0.1/test.php" method="post">
 					<div class="row">
@@ -78,12 +75,30 @@
 				<div class="container">
 					<h2>Phim Đang Chiếu</h2>
 					<div class="row">
-						<div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/AvengersResized.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
-						</div>
-						<div class="phim col-md-4 col-sm-6">
+						<?php
+							$model = new model();
+							$movies = $model->getMovies();
+							// print_r($movies);
+							for($i=1;$i<count($movies);$i++){
+
+								$id = $movies[$i]->movieID;
+								$name = $movies[$i]->name;
+								$description = $movies[$i]->description;
+								$duration = $movies[$i]->duration;
+								$image = $movies[$i]->image;
+								$link = "MovieInfo.php?id=".$id;
+
+						?>
+								<div class="phim col-md-4 col-sm-6">
+									<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
+									<button type="button" class="butt btn btn-success" onclick="click()" >Mua Vé</button>
+									<h4><?= $name ?></h4>
+								</div>
+						<?php
+							}
+						?>
+						
+						<!-- <div class="phim col-md-4 col-sm-6">
 							<a href=""><img class="img-fluid rounded" src="images/movie/solo.jpg"></a>
 							<button type="button" class="butt btn btn-success">Mua Vé</button>
 							<h4>Avengers:Infinity War</h4>
@@ -107,7 +122,7 @@
 							<a href=""><img class="img-fluid rounded" src="images/movie/the_greatestshowman.jpg"></a>
 							<button type="button" class="butt btn btn-success">Mua Vé</button>
 							<h4>Avengers:Infinity War</h4>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</section>

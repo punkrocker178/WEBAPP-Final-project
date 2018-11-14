@@ -1,8 +1,5 @@
 <?php
 	$page = "Giới Thiệu";
-	$fileDir = basename(__DIR__);
-	echo basename(__DIR__);
-
 	include('includes/header.php');
 ?>
 <main>
