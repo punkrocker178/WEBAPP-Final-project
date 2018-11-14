@@ -3,12 +3,12 @@
 	$fileDir = basename(__DIR__);
 	echo basename(__DIR__);
 
-	include 'includes/header.php';
+	include('includes/header.php');
 
 ?> 
 		<main>
 
-			<div class="container chonPhim">
+			<!-- <div class="container chonPhim">
 				<form action="http://127.0.0.1/test.php" method="post">
 					<div class="row">
 						<div class="col-md-4">
@@ -41,7 +41,7 @@
 					</div>
 					
 				</form>
-			</div>
+			</div> -->
 			<!-- <div class="banner">
 				<img class ="banner" src="images/cinema/dolby1.jpg">
 			</div> -->
@@ -170,5 +170,5 @@
 			</section>
 		</main>
 <?php
-	include 'includes/footer.php';
+	include ('includes/footer.php');
 ?>

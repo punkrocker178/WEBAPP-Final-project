@@ -7,25 +7,21 @@
 			$javascript = "js/functions.js";
 			$icon = "images/logo.png";
 
-			if($fileDir=="WEBAPP-Final-project"){
-					$fileDir = "pages/";
-			}else if($fileDir=="pages"){
-					$fileDir = "./";
-			}
+			// if($fileDir=="WEBAPP-Final-project"){
+			// 		$fileDir = "pages/";
+			// }else if($fileDir=="pages"){
+			// 		$fileDir = "./";
+			// }
 
-			if($page != "Milkyway Cinema"){
-				$css = "../" . $css;
-				$javascript = "../" . $javascript;
-				$icon = "../" . $icon;
-				
-
-			}else if($page =="Milkyway Cinema"){
-				$css = "./" . $css;
-				$javascript = "./" . $javascript;
-				$icon = "./" . $icon;
-				
-			}
-			echo $fileDir;
+			// if($page != "Milkyway Cinema"){
+			// 	$css = "../" . $css;
+			// 	$javascript = "../" . $javascript;
+			// 	$icon = "../" . $icon;
+			// }else if($page =="Milkyway Cinema"){
+			// 	$css = "./" . $css;
+			// 	$javascript = "./" . $javascript;
+			// 	$icon = "./" . $icon;
+			// }
 		?>
 		<title><?php echo $page ?></title>
 		<meta charset="utf-8">
@@ -57,42 +53,19 @@
 				<div class="collapse navbar-collapse" id="collapsibleNavbar">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link" href=
-							<?php
-								if(basename($_SERVER['REQUEST_URI'])=="index.php"){
-									echo "index.php";
-								}else
-							 		echo $fileDir . "index.php";
-							 	?> >TRANG CHỦ</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">PHIM</a>
+							<a class="nav-link" href="index.php" >TRANG CHỦ</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">LỊCH CHIẾU</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href=
-							<?php
-								if(basename($_SERVER['REQUEST_URI'])=="rap.php"){
-									echo "rap.php";
-								}else
-							 		echo $fileDir . "rap.php";
-							 	?> >RẠP & GIÁ Vé</a>
+							<a class="nav-link" href="rap.php" >RẠP & GIÁ VÉ</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">TIN TỨC</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">KHUYẾN MÃI</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href=<?php
-								if(basename($_SERVER['REQUEST_URI'])=="gioithieu.php"){
-									echo "gioithieu.php";
-								}else
-							 		echo $fileDir . "gioithieu.php";
-							 	?> >GIỚI THIỆU</a>
+							<a class="nav-link" href="gioithieu.php" >GIỚI THIỆU</a>
 						</li>
 					</ul>
 				</div>

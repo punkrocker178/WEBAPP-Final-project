@@ -1,14 +1,6 @@
 		<?php 
 			$icon1 = "images/facebook.png";
 			$icon2 = "images/instagram.png";
-
-			if($page != "Milkyway Cinema"){
-				$icon1 = "../" . $icon1;
-				$icon2 = "../" . $icon2;
-			}else{
-				$icon1 = "./" . $icon1;
-				$icon2 = "./" . $icon2;
-			}
 		?>
 		<footer>
 			<span class="left">
