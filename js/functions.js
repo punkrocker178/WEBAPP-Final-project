@@ -5,13 +5,15 @@ $(document).ready(function () {
 		$(this).children("button").css("display", "block");
 	});
 
-	// $(".phim").mouseleave(function () {
-	// 	$(".butt").css("display", "none");
-	// });
+	$(".phim").mouseleave(function () {
+		$(".butt").css("display", "none");
+	});
 
-	function click(){
+	$(".butt").click(function(){
 		alert("CLICKED");
-	}
+	})
+
+
 
 
 });

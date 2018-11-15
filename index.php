@@ -3,9 +3,9 @@
 	include("model/model.php");
 	include('includes/header.php');
 	
-?> 
-		<main>
-			<!-- <div class="container chonPhim">
+?>
+<main>
+	<!-- <div class="container chonPhim">
 				<form action="http://127.0.0.1/test.php" method="post">
 					<div class="row">
 						<div class="col-md-4">
@@ -39,47 +39,60 @@
 					
 				</form>
 			</div> -->
-			<!-- <div class="banner">
+	<!-- <div class="banner">
 				<img class ="banner" src="images/cinema/dolby1.jpg">
 			</div> -->
-			<div class="banner">
-				<div id="demo" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ul class="carousel-indicators">
-						<li data-target="#demo" data-slide-to="0" class="active"></li>
-						<li data-target="#demo" data-slide-to="1"></li>
-						<li data-target="#demo" data-slide-to="2"></li>
-					</ul>
-					<!-- The slideshow -->
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="images/cinema/dolbyResized.jpg" alt="Dolby 1">
-						</div>
-						<div class="carousel-item">
-							<img src="images/cinema/dolby_cinema2.png" alt="Dolby 2">
-						</div>
-						<div class="carousel-item">
-							<img src="images/cinema/rap.jpg" alt="rap">
-						</div>
-					</div>
-					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#demo" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</a>
-					<a class="carousel-control-next" href="#demo" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</a>
+	<div class="banner">
+		<div id="slide1" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ul class="carousel-indicators">
+				<li data-target="#slide1" data-slide-to="0" class="active"></li>
+				<li data-target="#slide1" data-slide-to="1"></li>
+				<li data-target="#slide1" data-slide-to="2"></li>
+			</ul>
+			<!-- The slideshow -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="images/cinema/dolbyResized.jpg" alt="Dolby 1">
+				</div>
+				<div class="carousel-item">
+					<img src="images/cinema/dolby_cinema2.png" alt="Dolby 2">
+				</div>
+				<div class="carousel-item">
+					<img src="images/cinema/rap.jpg" alt="rap">
 				</div>
 			</div>
-			<section class="dang-chieu">
-				<div class="container">
-					<h2>Phim Đang Chiếu</h2>
-					<div class="row">
-						<?php
-							$model = new model();
-							$movies = $model->getMovies();
-							// print_r($movies);
-							for($i=1;$i<count($movies);$i++){
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#slide1" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#slide1" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</div>
+	</div>
+	<section class="dang-chieu">
+		<div class="container">
+			<h2>Phim Đang Chiếu</h2>
+			<div class="row">
+				<div id="slide2" class="carousel slide col-md-12" data-ride="carousel">
+					<!-- Indicators -->
+					<ul class="carousel-indicators">
+						<li data-target="#slide2" data-slide-to="0" class="active"></li>
+						<li data-target="#slide2" data-slide-to="1"></li>
+						<!-- <li data-target="#slide2" data-slide-to="2"></li> -->
+					</ul>
+					<div class="carousel-inner">
+
+					<?php
+						$model = new model();
+						$movies = $model->getMovies();
+					?>
+						<!-- BEGIN SLIDE 1 -->
+						<div class="carousel-item active">
+							<div class="row">
+					<?php
+							for($i=1;$i<=count($movies)-4;$i++){
 
 								$id = $movies[$i]->movieID;
 								$name = $movies[$i]->name;
@@ -88,102 +101,139 @@
 								$image = $movies[$i]->image;
 								$link = "MovieInfo.php?id=".$id;
 
-						?>
-								<div class="phim col-md-4 col-sm-6">
+					?>
+
+								<div class="phim col-lg-4 col-md-6 col-xs-6">
 									<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
-									<button type="button" class="butt btn btn-success" onclick="click()" >Mua Vé</button>
-									<h4><?= $name ?></h4>
+									<button type="button" class="butt btn btn-success">Mua Vé</button>
+									<h4>
+										<?= $name ?>
+									</h4>
 								</div>
-						<?php
-							}
-						?>
-						
-						<!-- <div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/solo.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
+								<!-- END PHIM -->
+					<?php
+						}
+					?>
+							</div>
+							<!-- END ROW -->
 						</div>
-						<div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/wreckitralph2.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
+						<!-- END CAROUSEL ITEM -->
+
+						<!-- BEGIN SLIDE 2 -->
+						<div class="carousel-item">
+						<div class="row">
+					<?php
+							for($i=4;$i<=count($movies)-1;$i++){
+
+								$id = $movies[$i]->movieID;
+								$name = $movies[$i]->name;
+								$description = $movies[$i]->description;
+								$duration = $movies[$i]->duration;
+								$image = $movies[$i]->image;
+								$link = "MovieInfo.php?id=".$id;
+
+					?>
+
+								<div class="phim col-lg-4 col-md-6 col-xs-6">
+									<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
+									<button type="button" class="butt btn btn-success">Mua Vé</button>
+									<h4>
+										<?= $name ?>
+									</h4>
+								</div>
+								<!-- END PHIM -->
+					<?php
+						}
+					?>
+							</div>
+							<!-- END ROW -->
 						</div>
-						<div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/predator.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
-						</div>
-						<div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/the nun.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
-						</div>
-						<div class="phim col-md-4 col-sm-6">
-							<a href=""><img class="img-fluid rounded" src="images/movie/the_greatestshowman.jpg"></a>
-							<button type="button" class="butt btn btn-success">Mua Vé</button>
-							<h4>Avengers:Infinity War</h4>
-						</div> -->
+						<!-- END CAROUSEL ITEM -->
 					</div>
+					<!-- END CAROUSEL INNER -->
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#slide2" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#slide2" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
 				</div>
-			</section>
-			<section>
-				<div class="container">
-					<h2>Tin tức</h2>
-					<div class="row">
-						<article class="col-md-6">
-							<a href="">Bộ mặt thật của ác quỷ ma sơ Valak</a>
-							<img src="News/bonnie.jpg" alt="bonnie aarons" class="img-thumbnail">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
-								Nulla facilisi. Morbi volutpat ut ante vitae consectetur. Vivamus faucibus libero purus, sit amet tempor tortor laoreet sit amet.
-								Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt tellus.
-							</p>
-						</article>
-						<article class="col-md-6">
-							<a href="">Annabelle lung linh trên mxh</a>
-							<img src="News/annabelle.png" alt="filter meme" class="img-thumbnail">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-								Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</article>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div class="container">
-					<h2>Khuyến Mãi</h2>
-				</div>
-			</section>
-			<section>
-				<div class="container">
-					<h2>Giới thiệu</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				<!-- END CAROUSEL -->
+			</div>
+			<!-- END ROW -->
+		</div>
+		<!-- END CONTAINER -->
+	</section>
+	<section>
+		<div class="container">
+			<h2>Tin tức</h2>
+			<div class="row">
+				<article class="col-md-6">
+					<a href="">Bộ mặt thật của ác quỷ ma sơ Valak</a>
+					<img src="News/bonnie.jpg" alt="bonnie aarons" class="img-thumbnail">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
-						Nulla facilisi. Morbi volutpat ut ante vitae consectetur. Vivamus faucibus libero purus, sit amet tempor tortor laoreet sit amet.
-						Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt tellus.
-						Proin imperdiet, augue sit amet laoreet rutrum, lectus orci congue ligula, in sollicitudin lectus ligula sit amet nunc.
-						In viverra rutrum volutpat. Aliquam erat volutpat. Aliquam a maximus ex, eu accumsan mauris.
-						Nulla at est magna. Nunc pharetra odio a odio posuere, et viverra ante lacinia.
-						Nam fermentum mattis metus, eget vestibulum ante ultricies at. Quisque blandit dictum tortor pellentesque gravida. Vestibulum mollis dolor vitae ante scelerisque vulputate.
-						Ut ut blandit mauris, et facilisis turpis. Nam ut dictum eros.
-						Mauris luctus eget nibh sit amet ullamcorper. Vestibulum ac sem risus.
-						Cras et leo pretium, scelerisque est at, condimentum tellus. Maecenas gravida tristique consectetur.
-						Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-						Nam porta risus id felis accumsan consequat in eu massa.
-						Nam feugiat eros non libero vehicula commodo quis id leo.
-						Donec sodales fermentum est eu tempor. Integer vitae rhoncus ligula. Mauris rutrum lacinia luctus.
-						Donec pretium sit amet lectus in convallis. Phasellus mi ipsum, mattis id ornare eu, gravida ut mauris.
-						Integer viverra tristique maximus. Cras bibendum dolor ex, sit amet egestas lectus placerat at. Nulla quis orci justo. Aliquam nec ligula nec diam dictum commodo mollis porttitor orci. Donec diam felis, cursus eu dignissim at, venenatis ac elit. Fusce sit amet blandit odio, at congue ipsum.
-						Suspendisse ut sodales orci. Suspendisse et dignissim nisi, id lacinia felis.
-						Nullam accumsan ex purus, vitae convallis nibh tincidunt semper. Nunc enim dolor, blandit faucibus risus et, aliquam egestas ex. Nam iaculis efficitur odio, non mattis turpis volutpat vitae.
-					Nulla posuere finibus posuere. Maecenas suscipit, orci ut malesuada cursus, mauris odio feugiat enim, vitae dignissim urna sem vel sem.</p>
-				</div>
-			</section>
-		</main>
+						Nulla facilisi. Morbi volutpat ut ante vitae consectetur. Vivamus faucibus libero purus, sit amet tempor tortor
+						laoreet sit amet.
+						Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt
+						tellus.
+					</p>
+				</article>
+				<article class="col-md-6">
+					<a href="">Annabelle lung linh trên mxh</a>
+					<img src="News/annabelle.png" alt="filter meme" class="img-thumbnail">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+						sint occaecat cupidatat non proident,
+						sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<h2>Khuyến Mãi</h2>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<h2>Giới thiệu</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Aenean efficitur posuere nisi vitae aliquam. Vestibulum pharetra eu metus id semper.
+				Nulla facilisi. Morbi volutpat ut ante vitae consectetur. Vivamus faucibus libero purus, sit amet tempor tortor
+				laoreet sit amet.
+				Sed tincidunt diam sit amet tortor iaculis efficitur. Praesent ex lacus, mollis vel felis at, viverra tincidunt
+				tellus.
+				Proin imperdiet, augue sit amet laoreet rutrum, lectus orci congue ligula, in sollicitudin lectus ligula sit amet
+				nunc.
+				In viverra rutrum volutpat. Aliquam erat volutpat. Aliquam a maximus ex, eu accumsan mauris.
+				Nulla at est magna. Nunc pharetra odio a odio posuere, et viverra ante lacinia.
+				Nam fermentum mattis metus, eget vestibulum ante ultricies at. Quisque blandit dictum tortor pellentesque gravida.
+				Vestibulum mollis dolor vitae ante scelerisque vulputate.
+				Ut ut blandit mauris, et facilisis turpis. Nam ut dictum eros.
+				Mauris luctus eget nibh sit amet ullamcorper. Vestibulum ac sem risus.
+				Cras et leo pretium, scelerisque est at, condimentum tellus. Maecenas gravida tristique consectetur.
+				Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+				Nam porta risus id felis accumsan consequat in eu massa.
+				Nam feugiat eros non libero vehicula commodo quis id leo.
+				Donec sodales fermentum est eu tempor. Integer vitae rhoncus ligula. Mauris rutrum lacinia luctus.
+				Donec pretium sit amet lectus in convallis. Phasellus mi ipsum, mattis id ornare eu, gravida ut mauris.
+				Integer viverra tristique maximus. Cras bibendum dolor ex, sit amet egestas lectus placerat at. Nulla quis orci
+				justo. Aliquam nec ligula nec diam dictum commodo mollis porttitor orci. Donec diam felis, cursus eu dignissim at,
+				venenatis ac elit. Fusce sit amet blandit odio, at congue ipsum.
+				Suspendisse ut sodales orci. Suspendisse et dignissim nisi, id lacinia felis.
+				Nullam accumsan ex purus, vitae convallis nibh tincidunt semper. Nunc enim dolor, blandit faucibus risus et,
+				aliquam egestas ex. Nam iaculis efficitur odio, non mattis turpis volutpat vitae.
+				Nulla posuere finibus posuere. Maecenas suscipit, orci ut malesuada cursus, mauris odio feugiat enim, vitae
+				dignissim urna sem vel sem.</p>
+		</div>
+	</section>
+</main>
 <?php
 	include ('includes/footer.php');
 ?>
