@@ -1,8 +1,8 @@
-<?php 
-	$page = "Milkyway Cinema";
-	include("model/model.php");
-	include('includes/header.php');
-	
+<?php
+    $page = "Milkyway Cinema";
+    include("model/model.php");
+    include('includes/header.php');
+
 ?>
 <main>
 	<!-- <div class="container chonPhim">
@@ -36,7 +36,7 @@
 					<div class="row">
 						<button type="submit" class="mua-ve btn btn-success">Mua Vé</button>
 					</div>
-					
+
 				</form>
 			</div> -->
 	<!-- <div class="banner">
@@ -75,91 +75,28 @@
 		<div class="container">
 			<h2>Phim Đang Chiếu</h2>
 			<div class="row">
-				<div id="slide2" class="carousel slide col-md-12" data-ride="carousel">
-					<!-- Indicators -->
-					<ul class="carousel-indicators">
-						<li data-target="#slide2" data-slide-to="0" class="active"></li>
-						<li data-target="#slide2" data-slide-to="1"></li>
-						<!-- <li data-target="#slide2" data-slide-to="2"></li> -->
-					</ul>
-					<div class="carousel-inner">
+				<?php
+                        $model = new model();
+                        $movies = $model->getMovies();
+                        for ($i=1;$i<count($movies);$i++) {
+                            $id = $movies[$i]->movieID;
+                            $name = $movies[$i]->name;
+                            $description = $movies[$i]->description;
+                            $duration = $movies[$i]->duration;
+                            $image = $movies[$i]->image;
+                            $link = "MovieInfo.php?id=".$id; ?>
 
-					<?php
-						$model = new model();
-						$movies = $model->getMovies();
-					?>
-						<!-- BEGIN SLIDE 1 -->
-						<div class="carousel-item active">
-							<div class="row">
-					<?php
-							for($i=1;$i<=count($movies)-4;$i++){
-
-								$id = $movies[$i]->movieID;
-								$name = $movies[$i]->name;
-								$description = $movies[$i]->description;
-								$duration = $movies[$i]->duration;
-								$image = $movies[$i]->image;
-								$link = "MovieInfo.php?id=".$id;
-
-					?>
-
-								<div class="phim col-lg-4 col-md-6 col-xs-6">
-									<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
-									<button type="button" class="butt btn btn-success">Mua Vé</button>
-									<h4>
-										<?= $name ?>
-									</h4>
-								</div>
-								<!-- END PHIM -->
-					<?php
-						}
-					?>
+							<div class="phim col-lg-4 col-md-6 col-xs-6">
+								<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
+								<button type="button" class="butt btn btn-success">Mua Vé</button>
+								<h4>
+									<?= $name ?>
+								</h4>
 							</div>
-							<!-- END ROW -->
-						</div>
-						<!-- END CAROUSEL ITEM -->
-
-						<!-- BEGIN SLIDE 2 -->
-						<div class="carousel-item">
-						<div class="row">
-					<?php
-							for($i=4;$i<=count($movies)-1;$i++){
-
-								$id = $movies[$i]->movieID;
-								$name = $movies[$i]->name;
-								$description = $movies[$i]->description;
-								$duration = $movies[$i]->duration;
-								$image = $movies[$i]->image;
-								$link = "MovieInfo.php?id=".$id;
-
-					?>
-
-								<div class="phim col-lg-4 col-md-6 col-xs-6">
-									<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
-									<button type="button" class="butt btn btn-success">Mua Vé</button>
-									<h4>
-										<?= $name ?>
-									</h4>
-								</div>
-								<!-- END PHIM -->
-					<?php
-						}
-					?>
-							</div>
-							<!-- END ROW -->
-						</div>
-						<!-- END CAROUSEL ITEM -->
-					</div>
-					<!-- END CAROUSEL INNER -->
-					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#slide2" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</a>
-					<a class="carousel-control-next" href="#slide2" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</a>
-				</div>
-				<!-- END CAROUSEL -->
+							<!-- END PHIM -->
+				<?php
+                        }
+                ?>
 			</div>
 			<!-- END ROW -->
 		</div>
@@ -235,5 +172,5 @@
 	</section>
 </main>
 <?php
-	include ('includes/footer.php');
+    include('includes/footer.php');
 ?>

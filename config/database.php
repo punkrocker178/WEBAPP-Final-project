@@ -2,7 +2,7 @@
     function getConnection(){
         $servername = "localhost";
         $username = "root";
-        $password = "Hieuminecraft178";
+        $password = "";
         $db = "rap_phim";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $db);
