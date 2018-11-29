@@ -77,22 +77,24 @@
 			<div class="row">
 				<?php
                         $model = new model();
-                        $movies = $model->getMovies();
-                        for ($i=1;$i<count($movies);$i++) {
+						$movies = $model->getMovies();
+						// print_r($movies);
+                         for ($i=0;$i<count($movies);$i++) {
+
                             $id = $movies[$i]->movieID;
                             $name = $movies[$i]->name;
-                            $description = $movies[$i]->description;
+                        	$description = $movies[$i]->description;
                             $duration = $movies[$i]->duration;
                             $image = $movies[$i]->image;
                             $link = "MovieInfo.php?id=".$id; ?>
 
-							<div class="phim col-lg-4 col-md-6 col-xs-6">
+						 	<div class="phim col-lg-4 col-md-6 col-xs-6">
 								<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
 								<button type="button" class="butt btn btn-success">Mua Vé</button>
-								<h4>
-									<?= $name ?>
-								</h4>
-							</div>
+						 		<h4>
+						 			<?= $name ?>
+						 		</h4>
+						 	</div>
 							<!-- END PHIM -->
 				<?php
                         }

@@ -51,12 +51,22 @@
 
         public function getMovies(){
             $movies[] = array();
-            $SQLquery = "SELECT * FROM movie";
+            $SQLquery = "SELECT * FROM phim";
             $result = $this->conn -> query($SQLquery);
+            $i=0;
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()){
-                    $movie = new movie($row['ID'],$row['Name'],$row['Description'],$row['Duration'],$row['images']);
-                    $movies[$row['ID']] = $movie;
+                    // $movie = new movie($row['ID'],$row['Name'],$row['Description'],$row['Duration'],$row['images']);
+                    // $movies[$row['ID']] = $movie;
+                    
+                    $info = array("ID" => $row["ma_phim"], "Name" => $row["tenphim"], "Image" => $row["anh_dai_dien"], "Category" => $row["the_loai"]
+                    , "Nationality" => $row["quoc_gia"], "Duration" => $row["thoi_luong"], "Date" => $row["khoi_chieu"], "Language" => $row["ngon_ngu"]
+                    , "Director" => $row["dao_dien"], "Publisher" => $row["nha_san_xuat"], "Actor" => $row["dien_vien_chinh"]
+                    , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"]); 
+                    // print_r($info);
+                    $movie = new movie($info);
+                    $movies[$i] = $movie;
+                    $i++;
                 }
                 return $movies;
             }else{
