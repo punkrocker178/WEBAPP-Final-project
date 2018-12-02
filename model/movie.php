@@ -3,7 +3,7 @@
 
         //thuộc tính kiểu bình thường
         private $movieID,$name,$duration,$image,$category
-        ,$nationality,$date,$language,$publisher
+        ,$nationality,$date,$schedule,$language,$publisher
         ,$description,$rated,$status;
 
         //thuộc tính kiểu mảng

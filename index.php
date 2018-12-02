@@ -1,47 +1,10 @@
 <?php
     $page = "Milkyway Cinema";
     include("model/model.php");
-    include('includes/header.php');
+	include('includes/header.php');
 
 ?>
 <main>
-	<!-- <div class="container chonPhim">
-				<form action="http://127.0.0.1/test.php" method="post">
-					<div class="row">
-						<div class="col-md-4">
-							<label for="movie">Chọn Phim</label>
-							<select name="movie" id="movie">
-								<option value="The Nun">The Nun</option>
-								<option value="Annabelle">Annabelle</option>
-								<option value="Annabelle2">Annabelle2</option>
-							</select>
-						</div>
-						<div class="col-md-4">
-							<label for="cinema">Chọn Rạp</label>
-							<select name="cinema" id="cinema">
-								<option value="Rạp 1">Rạp 1</option>
-								<option value="Rạp 2">Rạp 2</option>
-								<option value="Rạp 3">Rạp 3</option>
-							</select>
-						</div>
-						<div class="col-md-4">
-							<label for="date">Chọn Ngày</label>
-							<select name="date" id="date">
-								<option value="nay">Hôm nay</option>
-								<option value="mai">Ngày mai</option>
-								<option value="mot">Ngày mốt</option>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<button type="submit" class="mua-ve btn btn-success">Mua Vé</button>
-					</div>
-
-				</form>
-			</div> -->
-	<!-- <div class="banner">
-				<img class ="banner" src="images/cinema/dolby1.jpg">
-			</div> -->
 	<div class="banner">
 		<div id="slide1" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -80,16 +43,15 @@
 						$movies = $model->getMovies();
 						// print_r($movies);
                          for ($i=0;$i<count($movies);$i++) {
-
                             $id = $movies[$i]->movieID;
                             $name = $movies[$i]->name;
                         	$description = $movies[$i]->description;
                             $duration = $movies[$i]->duration;
                             $image = $movies[$i]->image;
-                            $link = "MovieInfo.php?id=".$id; ?>
+                            $link = "movieDetail.php?id=".$id; ?>
 
 						 	<div class="phim col-lg-4 col-md-6 col-xs-6">
-								<a href=""><img class="img-fluid rounded" src="<?= $image ?>"></a>
+								<a href="<?= $link?>"><img class="img-fluid rounded" src="<?= $image ?>"></a>
 								<button type="button" class="butt btn btn-success">Mua Vé</button>
 						 		<h4>
 						 			<?= $name ?>
@@ -176,3 +138,4 @@
 <?php
     include('includes/footer.php');
 ?>
+
