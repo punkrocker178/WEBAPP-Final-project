@@ -1,12 +1,12 @@
 <?php
- if(empty($lichChieu)){
-    echo "<div class=\"alert alert-danger\" role=\"alert\">
+ if (empty($lichChieu)) {
+     echo "<div class=\"alert alert-danger\" role=\"alert\">
           No Data :(
           </div>";
-  }else{
-    foreach($lichChieu as $lich){
-      if($lich<>null){
-?>
+ } else {
+     foreach ($lichChieu as $lich) {
+         if ($lich<>null) {
+             ?>
 <div class="table-responsive" id="<?= $lich["MaRap"]?>">
     <table class="table">
         <thead>
@@ -16,7 +16,7 @@
                 </th>
             </tr>
             <tr>
-                <td><a href="datVe.php?id=<?= $ID ?>?date=<?= $date ?>">
+                <td><a href="datVe.php?id=<?= $ID ?>&date=<?= $date ?>&gio_chieu=<?= $lich["GioChieu"] ?>&rap=<?= $lich["MaRap"] ?>">
                         <?= $lich["GioChieu"]?>
                     </a>
                 </td>
@@ -24,8 +24,8 @@
         </thead>
     </table>
 </div>
-<?php 
-        }
-    }
-}
+<?php
+         }
+     }
+ }
 ?>
