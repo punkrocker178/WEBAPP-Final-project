@@ -4,9 +4,8 @@
         //thuộc tính kiểu bình thường
         private $movieID,$name,$duration,$image,$category
         ,$nationality,$date,$schedule,$language,$publisher
-        ,$description,$rated,$status;
+        ,$description,$rated,$status,$youtubeID;
 
-        //thuộc tính kiểu mảng
         private $director,$actors;
 
         public function __construct($info)
@@ -25,7 +24,7 @@
             $this->description = $info["Description"];
             $this->rated = $info["Rated"];
             $this->status = $info["Status"];
-
+            $this->youtubeID = $info["YoutubeID"];
         }
 
         public function __get($property){

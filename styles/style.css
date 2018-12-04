@@ -132,6 +132,29 @@ body {
   display: block;
 }
 
+.table{
+  border-collapse:separate;
+  border-spacing: 1em;
+}
+
+.table>tr>td{
+  /* border : 1px solid grey; */
+  height: 10px;
+  width: 10px;
+  /* padding: 0.5em; */
+  /* margin: 0.5em; */
+  /* display: inline-block; */
+}
+
+.table-sm td{
+  padding: 0; 
+}
+
+.ghe,.table>thead>tr>th{
+  text-align: center;
+  background-color: #dee2e6;
+}
+
 footer {
   background-color: black;
   color: white;

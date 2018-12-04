@@ -14,10 +14,11 @@ if(isset($_GET['id'])){
   include('includes/header.php');
 
 ?>
-<script type="text/javascript" src="js/youtubeAPI.js"></script>
 <!--Current URL -->
 <!--<input type="hidden" id="url" value="<?="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>"> -->
 <input type="hidden" id="url" value=<?="loadLichChieu.php?id=" .$ID?>>
+<input type="hidden" id="videoID" value=<?= $movie->youtubeID?>>
+<script type="text/javascript" src="js/youtubeAPI.js"></script>
 <p id="txt"></p>
 <div class="container" id="movieDetailContainer">
   <div class="row">

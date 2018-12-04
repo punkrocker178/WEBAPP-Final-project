@@ -2,6 +2,7 @@
     include("config/database.php");
     include("model/account.php");
     include("model/movie.php");
+    include("model/ghe.php");
 
     class model{
         private $conn;
@@ -59,7 +60,7 @@
                     $info = array("ID" => $row["ma_phim"], "Name" => $row["tenphim"], "Image" => $row["anh_dai_dien"], "Category" => $row["the_loai"]
                     , "Nationality" => $row["quoc_gia"], "Duration" => $row["thoi_luong"], "Date" => $row["khoi_chieu"], "Language" => $row["ngon_ngu"]
                     , "Director" => $row["dao_dien"], "Publisher" => $row["nha_san_xuat"], "Actor" => $row["dien_vien_chinh"]
-                    , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"]); 
+                    , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']); 
                     // print_r($info);
                     $movie = new movie($info);
                     $movies[$i] = $movie;
@@ -79,7 +80,7 @@
                 $info = array("ID" => $row["ma_phim"], "Name" => $row["tenphim"], "Image" => $row["anh_dai_dien"], "Category" => $row["the_loai"]
                 , "Nationality" => $row["quoc_gia"], "Duration" => $row["thoi_luong"], "Date" => $row["khoi_chieu"], "Language" => $row["ngon_ngu"]
                 , "Director" => $row["dao_dien"], "Publisher" => $row["nha_san_xuat"], "Actor" => $row["dien_vien_chinh"]
-                , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"]); 
+                , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']); 
                 $movie = new movie($info);
                 return $movie;
             }else{
@@ -120,6 +121,27 @@
                     $i++;
                 }
                 return $date;
+            }else{
+                return "No DATA";
+            }
+        }
+
+        public function getAllGheByRap($rap){
+            $SQLquery = "SELECT ma_ghe,ma_loai,ma_trang_thai FROM ghe where ghe.ma_rap = '$rap'";
+            $result = $this->conn -> query($SQLquery);
+            $info = array();
+            $i=0;
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $info["ma_ghe"] = $row["ma_ghe"];
+                    $info["ma_trang_thai"] = $row["ma_trang_thai"];
+                    $info["ma_loai"] = $row["ma_loai"];
+                    $info["ma_rap"] = "";
+                    $ghe = new ghe($info);
+                    $gheArray[$i] = $ghe;
+                    $i++;
+                }
+                return $gheArray;
             }else{
                 return "No DATA";
             }
