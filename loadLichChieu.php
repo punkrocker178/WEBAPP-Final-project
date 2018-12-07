@@ -1,4 +1,6 @@
 <?php
+//Đây là controller load lịch chiếu theo ngày từ DB
+//Được gọi từ controller movieDetail.php và ajax
     if(isset($_GET['id'])){
         $ID = $_GET['id'];
     }else{
@@ -25,6 +27,6 @@
             $lichChieu[$rap[$i]] = $data;
           }
     }
-
+    //Sẽ xử lí sau
     echo json_encode($lichChieu);
 ?>

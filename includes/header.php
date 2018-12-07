@@ -39,9 +39,6 @@
 							<a class="nav-link" href="index.php" >TRANG CHỦ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">LỊCH CHIẾU</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="rap.php" >RẠP & GIÁ VÉ</a>
 						</li>
 						<li class="nav-item">
@@ -55,6 +52,7 @@
 			</nav>
 			<div class="signUp">
 			<?php 
+				require "modal.html";
 				if(isset($_SESSION['username'])){
 					$username = $_SESSION['username'];
 					echo "<a href='#'>$username</a>";
@@ -62,7 +60,6 @@
 				}else{
 					echo "<a data-toggle=\"modal\" href =\"#registerModal\">Đăng Kí</a>";
 					echo "<a data-toggle=\"modal\" href =\"#loginModal\">Đăng Nhập</a>";
-					require "modal.html";
 				}
 				 ?>
 				

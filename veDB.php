@@ -1,4 +1,5 @@
 <?php
+//Đây là chức năng hiển thị vé người dùng đã đặt thành công
 include("model/model.php");
 include('includes/header.php');
   if (!isset($_POST['veMovieID'])&&!isset($_POST['veDate'])&&isset($_POST['gia'])&&isset($_POST['veRap']) && isset($_POST['veKTG']) && isset($_POST['veMaGhe'])) {
@@ -11,6 +12,7 @@ $info["date"] = $_POST['veDate'];
 $info["rap"] = $_POST['veRap'];
 $info["gia"] = $_POST['gia'];
 $info["ktg"] = $_POST['veKTG'];
+$info['user'] = $username;
 $maGhe = $_POST['veMaGhe'];
 
 $maGheArr = preg_split("[,]",$maGhe);

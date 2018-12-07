@@ -30,21 +30,22 @@
         }
 
         public function register($info){
-            $statement = $this->conn->prepare("INSERT into user values(?,?,?,?)");
-            $statement->bind_param("siss",$info['name'],$info['gender'],$info['birthdate'],$info['email']);
+            $statement = $this->conn->prepare("INSERT into user values(?,?,?,?,?)");
+            $statement->bind_param("sisss",$info['name'],$info['gender'],$info['birthdate'],$info['email'],$info['sdt']);
 
             if(!($statement->execute())){
                 return $statement->error;
             }
 
-            $account = $this->conn->prepare("INSERT into account values(?,?)");
-            $account->bind_param("ss",$info['email'],$info['password']);
+            //Tạo tài khoản mặc định là tạo tk người dùng
+            $account = $this->conn->prepare("INSERT into account values(?,?,?)");
+            $account->bind_param("sss",$info['email'],$info['role_id'],$info['password']);
 
             if(!($account->execute())){
                 return $account->error;
             }
 
-            if($statement->affected_rows>0){
+            if($statement->affected_rows>0 && $account->affected_rows >0){
                 return true;
             }
             
@@ -149,8 +150,8 @@
         }
 
         public function veGiaoDich($info){
-                $statement = $this->conn->prepare("INSERT into ve2 values(?,?,?,?,?,?,?)");
-                $statement->bind_param("sssssis",$info['veID'],$info['movieID'],$info['rap'],$info['maGhe'],$info['date'],$info['gia'],$info['ktg']);
+                $statement = $this->conn->prepare("INSERT into ve2 values(?,?,?,?,?,?,?,?)");
+                $statement->bind_param("sssssiss",$info['veID'],$info['movieID'],$info['rap'],$info['maGhe'],$info['date'],$info['gia'],$info['ktg'],$info['user']);
                 if(!($statement->execute())){
                     return $statement->error;
                 }

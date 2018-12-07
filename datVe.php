@@ -1,4 +1,5 @@
 <?php
+//Đây là chức năng hiển thị chỗ ngồi còn trống và lựa chọn chỗ ngồi để đặt vé
 //controller
 include("model/model.php");
 include('includes/header.php');
@@ -87,6 +88,14 @@ for($i=0;$i<count($gheID);$i++){
 }
 echo $row;
 echo "</table>";
+echo "<div class=\"row\">".
+    "<div class=\"col-sm-8 ghe-info\">".
+    "<div class = \"col-sm-4 block ghe-bt\">Ghế thường</div>".
+    "<div class = \"col-sm-4 block ghe-vip\">Ghế VIP</div>".
+    "<div class = \"col-sm-4 block ghe-sweet\">Ghế Sweetbox</div>".
+    "<div class = \"col-sm-4 block ghe-GDB\">Ghế đã bán</div>".
+    "</div>". 
+    "</div>";//End row
 echo "</div>";
 echo "<div class=\"col-md-4 col-sm-12 info-box\">".
         "<form id=\"target\" action=\"veDB.php\" method = \"POST\">".
@@ -96,7 +105,7 @@ echo "<div class=\"col-md-4 col-sm-12 info-box\">".
         "<input name=\"veRap\" value=\"$rap\" type=\"hidden\">".
         "<input name=\"veKTG\" value=\"$ktg\" type=\"hidden\">".
         "<input id=\"maGhe\" name=\"veMaGhe\" value=\"\" type=\"hidden\">".
-        "<img class=\"img-fluid\" height = 50% src = \"$movie->image\" >".
+        "<img class=\"img-fluid rounded\" height = 50% src = \"$movie->image\" >".
         "<h2>$movie->name</h2><p><span style = \"font-weight : bold\">Rạp: </span>$rap</p>".
         "<p><span style = \"font-weight : bold\">Độ tuổi phù hợp: </span>$movie->rated</p>".
         "<p><span style = \"font-weight : bold\">Giờ chiếu: </span>$gio_chieu | $date</p>".
@@ -105,10 +114,13 @@ echo "<div class=\"col-md-4 col-sm-12 info-box\">".
         "<p id = \"total\"></p>".
         "<button id =\"thanhToan\" style=\"display : block\" type\"button\" class = \"btn btn-success\">Thanh Toán</button>".
         "</form></div>";
+
 // End row
 echo "</div>";
 //End container
 echo "</div>";
+?>
 
+<?php
 include("includes/footer.php");
 ?>

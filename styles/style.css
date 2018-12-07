@@ -175,6 +175,17 @@ body {
   background-color: #88d8b0;
 }
 
+.ghe-info > .block{
+  border: 1px solid black;
+  border-radius: 0.3em;
+  display: inline-block;
+  /* width: 50%; */
+  text-align: center;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 5px;
+}
+
 .alert{
   text-align: center;
   margin: auto;
@@ -191,7 +202,11 @@ body {
 }
 
 .info-box{
-  position: sticky;
+  margin-bottom : 1em;
+}
+
+#thanhToan{
+  margin: auto;
 }
 
 footer {
