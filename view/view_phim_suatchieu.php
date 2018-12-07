@@ -16,7 +16,7 @@
                 </th>
             </tr>
             <tr>
-                <td><a href="datVe.php?id=<?= $ID ?>&date=<?= $date ?>&gio_chieu=<?= $lich["GioChieu"] ?>&rap=<?= $lich["MaRap"] ?>">
+                <td><a href="datVe.php?id=<?= $ID ?>&date=<?= $date ?>&gio_chieu=<?= $lich["GioChieu"] ?>&rap=<?= $lich["MaRap"] ?>&ktg=<?= $lich["KTG"]?>">
                         <?= $lich["GioChieu"]?>
                     </a>
                 </td>

@@ -4,6 +4,7 @@ if(isset($_GET['id'])){
 }else{
   header("http://localhost/WEBAPP-Final-project/index.php");
 }
+  //View
   include("model/model.php");
   $model = new model();
   $ngayChieu = $model->getAllDate();
@@ -52,7 +53,6 @@ if(isset($_GET['id'])){
   </div>
   <h2>Lịch Chiếu</h2>
 
-  <!-- cần làm bằng AJAX  -->
   <select class="form-control col-sm-12 col-md-6 col-lg-3" name="ngayChieu" id="date">
     <!-- <option value="2018-11-12">12/11/2018</option>
     <option value="2018-11-13">13/11/2018</option> -->
@@ -64,6 +64,7 @@ if(isset($_GET['id'])){
     ?>
   </select>
   <?php
+  //Control
          include("loadLichChieu.php");
          include("view/view_phim_suatchieu.php");
    ?>

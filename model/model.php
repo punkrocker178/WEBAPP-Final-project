@@ -89,7 +89,7 @@
         }
 
         public function getMovieSchedule($ID,$date,$rap){
-            $SQLquery = "SELECT ktg.gio_chieu,rap.ma_rap,rap.ma_dinh_dang FROM ktg 
+            $SQLquery = "SELECT ktg.ma_ktg,ktg.gio_chieu,rap.ma_rap,rap.ma_dinh_dang FROM ktg 
             INNER JOIN lichchieu on ktg.ma_ktg =lichchieu.ma_ktg 
             INNER JOIN rap on lichchieu.ma_rap = rap.ma_rap 
             WHERE lichchieu.ma_phim = '$ID' AND ktg.ngay_chieu ='$date'
@@ -99,6 +99,7 @@
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()){
                     //$schedule[$i]["NgayChieu"] = $row['ngay_chieu'];
+                    $schedule["KTG"] = $row['ma_ktg'];
                     $schedule["GioChieu"] = $row['gio_chieu'];
                     $schedule["MaRap"] = $row['ma_rap'];
                     $schedule["DinhDang"] = $row['ma_dinh_dang'];
@@ -144,6 +145,35 @@
                 return $gheArray;
             }else{
                 return "No DATA";
+            }
+        }
+
+        public function veGiaoDich($info){
+                $statement = $this->conn->prepare("INSERT into ve2 values(?,?,?,?,?,?,?)");
+                $statement->bind_param("sssssis",$info['veID'],$info['movieID'],$info['rap'],$info['maGhe'],$info['date'],$info['gia'],$info['ktg']);
+                if(!($statement->execute())){
+                    return $statement->error;
+                }
+
+            if($statement->affected_rows>0){
+                return true;
+            }
+        }
+
+        public function loadOccupiedGhe($info){
+            $statement = $this->conn->prepare("SELECT ma_ghe FROM ve2 where ma_rap = ? and ngay = ? and ma_ktg = ?");
+            $statement->bind_param("sss",$info['rap'],$info['date'],$info['ktg']);
+            if(!($statement->execute())){
+                return $statement->error;
+            }
+                $result = $statement->get_result();
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $gheOccupied[] = $row['ma_ghe'];
+                }
+                return $gheOccupied;
+            }else{
+                return null;
             }
         }
     }

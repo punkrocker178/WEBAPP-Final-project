@@ -150,9 +150,48 @@ body {
   padding: 0; 
 }
 
-.ghe,.table>thead>tr>th{
+.table>thead>tr>th{
   text-align: center;
   background-color: #dee2e6;
+}
+
+.ghe-CTC,.ghe-GDB{
+  text-align: center;
+}
+
+.ghe-GDB{
+  background-color: #ff6f69;
+}
+
+.ghe-vip{
+  background-color: #ffcc5c;
+}
+
+.ghe-bt{
+  background-color: #f9f9f9;
+}
+
+.ghe-sweet{
+  background-color: #88d8b0;
+}
+
+.alert{
+  text-align: center;
+  margin: auto;
+}
+
+.ve{
+  margin: auto;
+}
+
+.error-msg{
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+
+.info-box{
+  position: sticky;
 }
 
 footer {
