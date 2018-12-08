@@ -177,6 +177,18 @@
                 return null;
             }
         }
+
+        public function getUserByEmail($email){
+            $SQLquery = "SELECT * FROM user WHERE email = '$email' ";
+            $result = $this->conn -> query($SQLquery);
+            
+            if($result->num_rows>0){
+                $user = $result->fetch_assoc();
+                return $user;
+            }else{
+                return null;
+            }
+        }
     }
 
 ?>
