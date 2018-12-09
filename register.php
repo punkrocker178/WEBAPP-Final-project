@@ -8,22 +8,30 @@
             echo json_encode($user);
             exit;
         }else{
-            echo null;
-        }
-        
+            echo json_encode(null);
+            exit;
+        }       
     }
 
-    if($_POST['func'] == "userIsExist"){
+    if(isset($_POST['func'])){
+        $function = $_POST['func'];
+    }else{
+        $function ="";
+    }
+
+    if($function == "userIsExist"){
         userIsExist($_POST['email'],$model);
-    }
-
-    if(isset($_POST['email']) && isset($_POST['name'])
-        && isset($_POST['gender']) && isset($_POST['birthday']) && isset($_POST['sdt'])
+    }else if(isset($_POST['email']) && isset($_POST['name'])
+        && isset($_POST['gender']) && isset($_POST['sdt'])
         && (strcmp($_POST['passwordRegister'],$_POST['passwordConfirmation'])==0)){
 
-            $birthday =$_POST['birthday'];
-            $date = DateTime::createFromFormat('m/d/Y',$birthday)->format('Y-m-d');
-
+            if(isset($_POST['birthday'])){
+                $date =$_POST['birthday'];
+            }else if(isset($_POST['fb_birthday'])){
+                $birthday =$_POST['fb_birthday'];
+                $date = DateTime::createFromFormat('m/d/Y',$birthday)->format('Y-m-d');
+            }
+        
             $info = array(
                 "email" => $_POST['email'],
                 "name" => $_POST['name'],
@@ -41,15 +49,13 @@
             }
         $result = $model->register($info);
         if($result == true){
-             echo "<script>$(\"#registerSuccess\").modal()</script>";
-             sleep(4);
-             echo "<script>window.location.replace(\"http://localhost/WEBAPP-Final-project/index.php\");</script>";
+            //  echo "<script>$(\"#registerSuccess\").modal()</script>";
+            //  sleep(3);
+            //  echo "<script>window.location.replace(\"http://localhost/WEBAPP-Final-project/index.php\");</script>";
+            echo json_encode(true);
         }else{
-            print_r($result);
+            echo json_encode(false);
         }
  
-    }else{
-        echo "error";
     }
-    
 ?>

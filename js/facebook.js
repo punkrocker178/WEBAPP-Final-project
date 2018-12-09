@@ -17,12 +17,13 @@ function checkLoginState() {
 }
 
 function statusChangeCallback(response) {
-  console.log(response);
+  console.log("statusChangeCallback");
+  //console.log(response);
   // The response object is returned with a status field that lets the
   // app know the current login status of the person.
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-    alert('Welcome! Fetching data...');
+    //alert('Welcome! Fetching data...');
     //Yêu cầu ng dùng nhập mật khẩu để tạo tài khoản 
     FB.api('/me', {
       fields: "name,email,birthday,gender"
@@ -45,12 +46,15 @@ function statusChangeCallback(response) {
 function fbLogin(response) {
   $.post("login.php", {
     userFB: response
-  }, function () {
-    setTimeout(function () {
-      window.location = 'http://localhost/WEBAPP-Final-project/index.php';
-    }, 2000);
-    $("#loginSuccess").modal();
-  })
+  },function(data){
+    if(data == true){
+        $("#loginModal").modal("hide");
+				setTimeout(function () {
+					window.location = "http://localhost/WEBAPP-Final-project/index.php";
+        }, 2000);
+        $("#loginSuccess").modal();
+    }
+  },"json")
 }
 
 function fbRegister(response) {
@@ -65,12 +69,20 @@ function fbRegister(response) {
       $.post("register.php", {
         email: response.email,
         name: response.name,
-        birthday: response.birthday,
+        fb_birthday: response.birthday,
         gender: response.gender,
         sdt: "0",
         passwordRegister: password,
         passwordConfirmation: passwordConfirm
-      });
+      },function(data){
+        if(data==true){
+          $("#registerModal").modal('hide');
+          setTimeout(function () {
+            window.location = "http://localhost/WEBAPP-Final-project/index.php";
+          }, 2000);
+          $("#registerSuccess").modal();
+        }
+      },"json");
     });
   }
 

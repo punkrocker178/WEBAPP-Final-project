@@ -4,7 +4,7 @@
 ?>
 <main>
 	<div class="container">
-		<h2>2D</h2>
+		<!-- <h2>2D</h2>
 		<div class="row">
 			<p>Người lớn</p>
 			<p>100.000vnd</p>
@@ -18,6 +18,39 @@
 		<div class="row">
 			<p>Người lớn</p>
 			<p>200.000vnd</p>
+		</div> -->
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+					<th>2D</th>
+
+					<td>
+						Người lớn
+					</td>
+					<td>
+						70.000 VND
+					</td>
+				</tr>
+				<tr>
+					<th>3D</th>
+
+					<td>
+						Người lớn
+					</td>
+					<td>
+						120.000 VND
+					</td>
+				</tr>
+				<tr>
+					<th>4DX</th>
+					<td>
+						Người lớn
+					</td>
+					<td>
+						170.000 VND
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </main>

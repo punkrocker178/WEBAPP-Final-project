@@ -1,7 +1,7 @@
 <?php
 //Đây là chức năng hiển thị các suất chiếu 
  if (empty($lichChieu)) {
-     echo "<div class=\"alert alert-danger\" role=\"alert\">
+     echo "<div class=\"col-sm-12 col-md-4 col-lg-3 alert alert-danger\" role=\"alert\">
           No Data :(
           </div>";
  } else {

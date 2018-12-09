@@ -42,15 +42,19 @@
                         $model = new model();
 						$movies = $model->getMovies();
 						// print_r($movies);
+						$hidden = "";
                          for ($i=0;$i<count($movies);$i++) {
                             $id = $movies[$i]->movieID;
                             $name = $movies[$i]->name;
                         	$description = $movies[$i]->description;
                             $duration = $movies[$i]->duration;
                             $image = $movies[$i]->image;
-                            $link = "movieDetail.php?id=".$id; ?>
-
-						 	<div class="phim col-lg-4 col-md-6 col-xs-6">
+                            $link = "movieDetail.php?id=".$id; 
+							if($i>5){
+								$hidden = "phim-hidden";
+							}
+					?>
+						 	<div class="phim <?=$hidden?> col-lg-4 col-md-6 col-xs-6">
 								<a href="<?= $link?>"><img class="img-fluid rounded" src="<?= $image ?>"></a>
 								<button type="button" class="butt btn btn-success">Mua Vé</button>
 						 		<h4>
@@ -61,14 +65,16 @@
 				<?php
                         }
                 ?>
+				
 			</div>
+			<div id="allMoviesBtn" class="float-right btn btn-primary">Xem Thêm</div>
 			<!-- END ROW -->
 		</div>
 		<!-- END CONTAINER -->
 	</section>
 	<section>
 		<div class="container">
-			<h2>Tin tức</h2>
+			<h2 style="margin-top: 2em">Tin tức</h2>
 			<div class="row">
 				<article class="col-md-6">
 					<a href="">Bộ mặt thật của ác quỷ ma sơ Valak</a>

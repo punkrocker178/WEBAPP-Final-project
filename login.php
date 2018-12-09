@@ -8,15 +8,20 @@
     
         if($user->login($username,$password)){
             $_SESSION['username'] = $_POST['userID'];
-            header("Location: http://localhost/WEBAPP-Final-project/index.php");
-            echo 
-            exit;
+            $_SESSION['loggedIn'] = true;
         }else{
-            echo "<script>alert(\"Wrong username or password\")</script>";
+            echo "<script>$(\"#loginFailure\").modal()</script>";
         }
     }else if(isset($_POST['userFB'])){
         $user = $_POST['userFB'];
         $_SESSION['username'] = $user['email'];
+        $_SESSION['loggedIn'] = true;
+    }
+
+    if($_SESSION['loggedIn'] == true){
+        echo json_encode(true);
+    }else{
+        echo json_encode(false);
     }
     
 ?>

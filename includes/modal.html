@@ -15,14 +15,13 @@
 						<label for="passWord">Mật khẩu</label>
 						<input type="password" class="form-control" name="password" id="password" required>
 					</div>
-					<a href="#">Quên mật khẩu?</a>
 					<div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-show-faces="false"
 					 data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email,user_birthday,user_gender"
 					 onlogin="checkLoginState();">
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-success col-sm-12" type="submit">Đăng Nhập</button>
+					<button class="btn btn-success col-sm-12" id="loginBtn" type="button">Đăng Nhập</button>
 				</div>
 			</form>
 		</div>
@@ -75,7 +74,7 @@
 
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-success col-sm-12" type="submit">Đăng Ký</button>
+					<button class="btn btn-success col-sm-12" id="registerBtn" type="button">Đăng Ký</button>
 				</div>
 			</form>
 		</div>
@@ -147,4 +146,16 @@
 				</i>
 			</div>
 		</div>
+</div>
+
+<!-- Đăng nhập thất bại -->
+<div class="modal fade" id="loginFailure">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="alert alert-danger" role="alert">
+			Sai tên đăng nhập hoặc mật khẩu
+			<i class="material-icons">
+				cancel
+			</i>
+		</div>
+	</div>
 </div>

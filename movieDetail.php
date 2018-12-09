@@ -66,7 +66,7 @@ if(isset($_GET['id'])){
   <?php
   //Control
          include("loadLichChieu.php");
-         include("view/view_phim_suatchieu.php");
+         
    ?>
 </div>
 

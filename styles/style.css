@@ -113,6 +113,10 @@ body {
   padding: 1em;
 }
 
+.phim-hidden{
+  display: none;
+}
+
 .phim img:hover {
   filter: brightness(0.5);
   transition: 0.5s;
