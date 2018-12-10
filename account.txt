@@ -1,0 +1,17 @@
+Admin:
+admin@gmail.com         Pass: 1234
+admin2@gmail.com        Pass: 1234
+hao@gmail.com           Pass: 12345
+
+User:
+anh1@gmail.com          Pass: 12345
+hale@gmail.com          Pass: 12345
+hien@gmail.com          Pass: 12345
+test@gmail.com          Pass: 123
+andiez@gmail.com        Pass: 123
+open_lvfpmst_user@tfbnw.net         Pass:graph
+bryviupczd_1544329706@tfbnw.net     Pass:testUser
+
+Facebook: Đăng nhập bằng facebook
+open_lvfpmst_user@tfbnw.net         Pass:testUser
+bryviupczd_1544329706@tfbnw.net     Pass:testUser

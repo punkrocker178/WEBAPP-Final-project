@@ -1,6 +1,15 @@
 $(document).ready(function () {
 	var selectedGhe = new Array();
 
+	$("#customFile").change(function(){
+		console.log(this.files[0].name);
+		var path = 'images/movie/'+this.files[0].name;
+		$("#FilePath").val(path);
+		$("#filePathHidden").val(path);
+		$("#moviePic").attr('src',path);
+		$("#moviePic").css('width','50%');
+	})
+
 	$("#allMoviesBtn").click(function(){
 		$(".phim-hidden").css('display','block');
 		$(this).css('display','none');
@@ -82,27 +91,6 @@ $(document).ready(function () {
 			 $(".table").remove();
 			 $(".container").append(data);
 		 });
-		
-		// $.ajax({
-		// 	url: $("#url").val(),
-		// 	data: "date= " + selectedDate,
-		// 	// success: function (data) {
-		// 	// 	$(".table-responsive").remove();
-		// 	// 	console.log(data);
-
-		// 	// 	$.each(data, function (rap, value) {
-		// 	// 		console.log(data[rap]["GioChieu"]);
-		// 	// 		var table = "<div class=\"table-responsive\" id=\"" + rap + "\">" +
-		// 	// 			"<table class=\"table\"><thead><tr><th>" + data[rap]["DinhDang"] + " - " + data[rap]["MaRap"] +
-		// 	// 			"</th></tr><tr><td><a href=\"datVe.php?id=" + ID + "?date=" + selectedDate + "\">" +
-		// 	// 			data[rap]["DinhDang"] + "</a></td></tr></thead></table></div>";
-		// 	// 		$("#movieDetailContainer").append(table);
-		// 	// 	});
-		// 	// },
-		// 	error: function (e) {
-		// 		console.log(e);
-		// 	}
-		// });
 	});
 
 	//Kiểm tra số lượng vé >0

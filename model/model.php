@@ -51,6 +51,20 @@
             
         }
 
+        public function insertMovie($info){
+            $statement = $this->conn->prepare("INSERT into phim values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            $statement->bind_param("sssssssssssssss",$info['movieID'],$info['name'],$info['filePath'],$info['category'],$info['quocGia'],
+            $info['duration'],$info['ngayChieu'],$info['ngon_ngu'],$info['director'],$info['nsx'],
+            $info['actor'],$info['noiDung'],$info['ma_nhan'],$info['tinhTrang'],$info['videoID']);
+
+            if(!($statement->execute())){
+                return $statement->error;
+            }
+            if($statement->affected_rows>0){
+                return true;
+            }
+        }
+
         public function getMovies(){
             $movies[] = array();
             $SQLquery = "SELECT * FROM phim";
@@ -86,6 +100,30 @@
                 return $movie;
             }else{
                 return "No DATA";
+            }
+        }
+
+        public function insertKTG($info){
+            $statement = $this->conn->prepare("INSERT into ktg values(?,?,?)");
+            $statement->bind_param("sss",$info['ma_ktg'],$info['date'],$info['ktg']);
+
+            if(!($statement->execute())){
+                return $statement->error;
+            }
+            if($statement->affected_rows>0){
+                return true;
+            }
+        }
+
+        public function insertLichChieu($info){
+            $statement = $this->conn->prepare("INSERT into lichchieu values(?,?,?)");
+            $statement->bind_param("sss",$info['ma_ktg'],$info['movieID'],$info['ma_rap']);
+
+            if(!($statement->execute())){
+                return $statement->error;
+            }
+            if($statement->affected_rows>0){
+                return true;
             }
         }
 
@@ -185,6 +223,18 @@
             if($result->num_rows>0){
                 $user = $result->fetch_assoc();
                 return $user;
+            }else{
+                return null;
+            }
+        }
+
+        public function getAccountByEmail($email){
+            $SQLquery = "SELECT * FROM account WHERE email = '$email' ";
+            $result = $this->conn -> query($SQLquery);
+            
+            if($result->num_rows>0){
+                $account = $result->fetch_assoc();
+                return $account;
             }else{
                 return null;
             }
