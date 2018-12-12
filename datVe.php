@@ -1,10 +1,16 @@
 <?php
 //Đây là chức năng hiển thị chỗ ngồi còn trống và lựa chọn chỗ ngồi để đặt vé
 //controller
+$page = "Đặt Vé";
 include("model/model.php");
 include('includes/header.php');
   if (!isset($_GET['date'])&&!isset($_GET['id'])&&isset($_GET['gio_chieu'])&&isset($_GET['rap']) && isset($_GET['ktg'])) {
       header("http://localhost/WEBAPP-Final-project/index.php");
+  }
+  if(!isset($_SESSION['username'])){
+      echo "<script>$(\"#loginPrerequisite\").modal()</script>";
+  }else{
+    echo "<script>$(\"#numOfTicketsModal\").modal({ show : true , backdrop : \"static\", keyboard : false} )</script>";
   }
   $ID = $_GET['id'];
   $date = $_GET['date'];
@@ -26,7 +32,7 @@ sort($gheID,SORT_NATURAL);
 if(isset($gheOccupied)){
     sort($gheOccupied,SORT_NATURAL);
 }
-    
+
 
 //Kiểm tra trạng thái của ghế
 function getStatus($gheID,$flag,$gheOccupied){
@@ -45,8 +51,7 @@ function getStatus($gheID,$flag,$gheOccupied){
 }
 //print_r($gheID);
 
-//view - lười nên để echo 
-echo "<script>$(\"#numOfTicketsModal\").modal({ show : true , backdrop : \"static\", keyboard : false} )</script>";
+//view - lười nên để echo
 echo "<div class=\"container\">";
 echo "<div class=\"alert alert-danger error-msg col-sm-12 col-md-4 col-lg-3\" role =\"alert\"></div>";
 echo "<div class=\"row\">";
@@ -63,7 +68,7 @@ for($i=0;$i<count($gheID);$i++){
     if(isset($gheOccupied)){
         $arr = getStatus($gheID[$i],$arr['flag'],$gheOccupied);
     }
-    
+
     if($i%10==0){
         $row = $row."<tr>".$tmp."</tr>";
         $tmp = "";
@@ -94,7 +99,7 @@ echo "<div class=\"row\">".
     "<div class = \"col-sm-4 block ghe-vip\">Ghế VIP</div>".
     "<div class = \"col-sm-4 block ghe-sweet\">Ghế Sweetbox</div>".
     "<div class = \"col-sm-4 block ghe-GDB\">Ghế đã bán</div>".
-    "</div>". 
+    "</div>".
     "</div>";//End row
 echo "</div>";
 echo "<div class=\"col-md-4 col-sm-12 info-box\">".

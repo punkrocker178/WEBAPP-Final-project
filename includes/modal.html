@@ -15,9 +15,7 @@
 						<label for="passWord">Mật khẩu</label>
 						<input type="password" class="form-control" name="password" id="password" required>
 					</div>
-					<div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-show-faces="false"
-					 data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email,user_birthday,user_gender"
-					 onlogin="checkLoginState();">
+					<div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email,user_birthday,user_gender" onlogin="checkLoginState();">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -102,27 +100,27 @@
 
 <!-- Password for Facebook account creation -->
 <div class="modal fade" id="passwordFB">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Tạo tài khoản mới</h4>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Tạo tài khoản mới</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="passwordFB1">Nhập mật khẩu</label>
+					<input type="password" class="form-control" name="passwordRegister" id="passwordFB1" required>
 				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="passwordFB1">Nhập mật khẩu</label>
-						<input type="password" class="form-control" name="passwordRegister" id="passwordFB1"  required>
-					</div>
-					<div class="form-group">
-							<label for="passwordFBConfirm">Nhập lại mật khẩu</label>
-							<input type="password" class="form-control" name="passwordConfirmation" id="passwordFBConfirm"  required>
-					</div>
+				<div class="form-group">
+					<label for="passwordFBConfirm">Nhập lại mật khẩu</label>
+					<input type="password" class="form-control" name="passwordConfirmation" id="passwordFBConfirm" required>
 				</div>
-				<div class="modal-footer">
-					<button class="btn btn-success col-sm-12" id="continueBtn_FB" type="button">Tiếp theo</button>
-				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success col-sm-12" id="continueBtn_FB" type="button">Tiếp theo</button>
 			</div>
 		</div>
 	</div>
+</div>
 
 <!-- Đăng nhập thành công -->
 <div class="modal fade" id="loginSuccess">
@@ -138,14 +136,14 @@
 
 <!-- Đăng kí thành công -->
 <div class="modal fade" id="registerSuccess">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="alert alert-success" role="alert">
-				Đăng kí tài khoản thành công
-				<i class="material-icons">
-					done_outline
-				</i>
-			</div>
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="alert alert-success" role="alert">
+			Đăng kí tài khoản thành công
+			<i class="material-icons">
+				done_outline
+			</i>
 		</div>
+	</div>
 </div>
 
 <!-- Đăng nhập thất bại -->
@@ -153,6 +151,18 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="alert alert-danger" role="alert">
 			Sai tên đăng nhập hoặc mật khẩu
+			<i class="material-icons">
+				cancel
+			</i>
+		</div>
+	</div>
+</div>
+
+<!-- Yêu cầu đăng nhập để đặt vé-->
+<div class="modal fade" id="loginPrerequisite">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="alert alert-danger" role="alert">
+			Bạn phải đăng nhập mới có thể đặt vé
 			<i class="material-icons">
 				cancel
 			</i>

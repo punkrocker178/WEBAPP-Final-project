@@ -49,7 +49,7 @@
                         	$description = $movies[$i]->description;
                             $duration = $movies[$i]->duration;
                             $image = $movies[$i]->image;
-                            $link = "movieDetail.php?id=".$id; 
+                            $link = "movieDetail.php?id=".$id;
 							if($i>5){
 								$hidden = "phim-hidden";
 							}
@@ -65,9 +65,9 @@
 				<?php
                         }
                 ?>
-				
+
 			</div>
-			<div id="allMoviesBtn" class="float-right btn btn-primary">Xem Thêm</div>
+			<div id="allMoviesBtn" class="float-right btn btn-success">Xem Thêm</div>
 			<!-- END ROW -->
 		</div>
 		<!-- END CONTAINER -->
@@ -144,4 +144,3 @@
 <?php
     include('includes/footer.php');
 ?>
-

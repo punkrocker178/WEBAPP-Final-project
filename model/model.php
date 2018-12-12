@@ -48,7 +48,7 @@
             if($statement->affected_rows>0 && $account->affected_rows >0){
                 return true;
             }
-            
+
         }
 
         public function insertMovie($info){
@@ -71,11 +71,11 @@
             $result = $this->conn -> query($SQLquery);
             $i=0;
             if($result->num_rows>0){
-                while($row = $result->fetch_assoc()){            
+                while($row = $result->fetch_assoc()){
                     $info = array("ID" => $row["ma_phim"], "Name" => $row["tenphim"], "Image" => $row["anh_dai_dien"], "Category" => $row["the_loai"]
                     , "Nationality" => $row["quoc_gia"], "Duration" => $row["thoi_luong"], "Date" => $row["khoi_chieu"], "Language" => $row["ngon_ngu"]
                     , "Director" => $row["dao_dien"], "Publisher" => $row["nha_san_xuat"], "Actor" => $row["dien_vien_chinh"]
-                    , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']); 
+                    , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']);
                     // print_r($info);
                     $movie = new movie($info);
                     $movies[$i] = $movie;
@@ -95,7 +95,7 @@
                 $info = array("ID" => $row["ma_phim"], "Name" => $row["tenphim"], "Image" => $row["anh_dai_dien"], "Category" => $row["the_loai"]
                 , "Nationality" => $row["quoc_gia"], "Duration" => $row["thoi_luong"], "Date" => $row["khoi_chieu"], "Language" => $row["ngon_ngu"]
                 , "Director" => $row["dao_dien"], "Publisher" => $row["nha_san_xuat"], "Actor" => $row["dien_vien_chinh"]
-                , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']); 
+                , "Description" => $row["noidung"], "Rated" => $row["ma_nhan"], "Status" => $row["tinh_trang"], "YoutubeID" => $row['youtubeID']);
                 $movie = new movie($info);
                 return $movie;
             }else{
@@ -128,9 +128,9 @@
         }
 
         public function getMovieSchedule($ID,$date,$rap){
-            $SQLquery = "SELECT ktg.ma_ktg,ktg.gio_chieu,rap.ma_rap,rap.ma_dinh_dang FROM ktg 
-            INNER JOIN lichchieu on ktg.ma_ktg =lichchieu.ma_ktg 
-            INNER JOIN rap on lichchieu.ma_rap = rap.ma_rap 
+            $SQLquery = "SELECT ktg.ma_ktg,ktg.gio_chieu,rap.ma_rap,rap.ma_dinh_dang FROM ktg
+            INNER JOIN lichchieu on ktg.ma_ktg =lichchieu.ma_ktg
+            INNER JOIN rap on lichchieu.ma_rap = rap.ma_rap
             WHERE lichchieu.ma_phim = '$ID' AND ktg.ngay_chieu ='$date'
             AND rap.ma_rap = '$rap'";
             $result = $this->conn -> query($SQLquery);
@@ -147,7 +147,7 @@
             }else{
                 return "No DATA";
             }
-            
+
         }
 
         public function getAllDate(){
@@ -189,7 +189,8 @@
 
         public function veGiaoDich($info){
                 $statement = $this->conn->prepare("INSERT into ve2 values(?,?,?,?,?,?,?,?)");
-                $statement->bind_param("sssssiss",$info['veID'],$info['movieID'],$info['rap'],$info['maGhe'],$info['date'],$info['gia'],$info['ktg'],$info['user']);
+                $statement->bind_param("sssssiss",$info['veID'],$info['movieID'],$info['rap']
+                ,$info['maGhe'],$info['date'],$info['gia'],$info['ktg'],$info['user']);
                 if(!($statement->execute())){
                     return $statement->error;
                 }
@@ -219,7 +220,7 @@
         public function getUserByEmail($email){
             $SQLquery = "SELECT * FROM user WHERE email = '$email' ";
             $result = $this->conn -> query($SQLquery);
-            
+
             if($result->num_rows>0){
                 $user = $result->fetch_assoc();
                 return $user;
@@ -231,7 +232,7 @@
         public function getAccountByEmail($email){
             $SQLquery = "SELECT * FROM account WHERE email = '$email' ";
             $result = $this->conn -> query($SQLquery);
-            
+
             if($result->num_rows>0){
                 $account = $result->fetch_assoc();
                 return $account;

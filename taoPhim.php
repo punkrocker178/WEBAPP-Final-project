@@ -1,4 +1,5 @@
 <?php
+$page = "Tạo phim";
 include("includes/header.php");
 if(!isset($_SESSION['staff']) || $_SESSION['staff']== false){
     echo "<script>window.location = \"http://localhost/WEBAPP-Final-project/index.php\"</script>";

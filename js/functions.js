@@ -1,6 +1,12 @@
 $(document).ready(function () {
 	var selectedGhe = new Array();
 
+	//Ẩn thông báo yêu cầu đăng nhập,rồi hiện modal đăng nhập lên
+	  $("#loginPrerequisite").click(function(){
+			  $("#loginModal").modal();
+		})
+
+//Khi chọn file sẽ hiển thị đường dẫn và hình ảnh ngay tức thì
 	$("#customFile").change(function(){
 		console.log(this.files[0].name);
 		var path = 'images/movie/'+this.files[0].name;
@@ -10,6 +16,7 @@ $(document).ready(function () {
 		$("#moviePic").css('width','50%');
 	})
 
+//Hiển thị tất cả phim
 	$("#allMoviesBtn").click(function(){
 		$(".phim-hidden").css('display','block');
 		$(this).css('display','none');
@@ -88,6 +95,7 @@ $(document).ready(function () {
 		var ID = stringURL[1];
 		 $.get("loadLichChieu.php",{date : selectedDate, id : ID},function(data){
 			 console.log(data);
+			 $(".alert").remove();
 			 $(".table").remove();
 			 $(".container").append(data);
 		 });
@@ -108,10 +116,10 @@ $(document).ready(function () {
 				//Un-select - bỏ chọn
 				if ($(this).css('filter') == 'brightness(0.5)') {
 					$(this).css('filter', 'none');
-					// Sai 
+					// Sai
 					selectedGhe.pop();
 					$("#gheChon").text(selectedGhe.toString());
-					//fade out transition 
+					//fade out transition
 					$(".error-msg").fadeOut(1000, function () {
 						$(".error-msg").css('display', 'none');
 					});
