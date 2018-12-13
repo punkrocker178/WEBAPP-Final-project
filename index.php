@@ -37,7 +37,7 @@
 	<section class="dang-chieu">
 		<div class="container">
 			<h2>Phim Đang Chiếu</h2><?php 
-			if($_SESSION['loggedIn'] == true && $_SESSION['staff'] == true){
+			if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $_SESSION['staff'] == true){
 				echo "<div id = \"taoPhimBtn\" link=\"taoPhim.php\" class=\"btn btn-success\">Tạo Phim Mới</div>";
 			}
 			?>
