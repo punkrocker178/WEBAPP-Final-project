@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	//Ẩn thông báo yêu cầu đăng nhập,rồi hiện modal đăng nhập lên
 	  $("#loginPrerequisite").click(function(){
-			  $("#loginModal").modal();
+			  $("#loginModal").modal({show:true,backdrop:'static',keyboard:false});
 		})
 
 //Khi chọn file sẽ hiển thị đường dẫn và hình ảnh ngay tức thì
@@ -16,7 +16,8 @@ $(document).ready(function () {
 		$("#moviePic").css('width','50%');
 	})
 
-//Hiển thị tất cả phim
+	//Buttons & alerts
+	//Hiển thị tất cả phim
 	$("#allMoviesBtn").click(function(){
 		$(".phim-hidden").css('display','block');
 		$(this).css('display','none');
@@ -31,7 +32,13 @@ $(document).ready(function () {
 	});
 
 	$(".butt").click(function () {
-		alert("CLICKED");
+		var link = $(this).attr("link");
+		window.location.href = link;
+	});
+
+	$("#taoPhimBtn").click(function() {
+		var link = $(this).attr("link");
+		window.location.replace(link);
 	});
 
 	$(".error-msg").click(function () {
@@ -59,6 +66,8 @@ $(document).ready(function () {
 					window.location = "http://localhost/WEBAPP-Final-project/index.php";
 				}, 2000);
 				$("#loginSuccess").modal();
+			}else if(data == false){
+				$("#loginFailure").modal();
 			}
 		}, "json");
 	});
@@ -142,19 +151,20 @@ $(document).ready(function () {
 					})
 				}
 				$("#thanhToan").click(function () {
-					if (numTicket > 0) { // Chưa đủ vé mà thanh toán
-						$(".error-msg").text("Bạn chưa chọn đủ số ghế!");
-						$(".error-msg").fadeIn(1000, function () {
-							$(".error-msg").css('display', 'block');
-						});
-					} else {
-						console.log(selectedGhe);
-						$("#maGhe").val(selectedGhe);
-						$("#totalGia").val(total);
-						$("#thanhToan").submit(function (event) {
-							event.preventDefault();
-						});
-					}
+						$("#target").submit(function (event) {
+							if (numTicket > 0) { // Chưa đủ vé mà thanh toán
+								$(".error-msg").text("Bạn chưa chọn đủ số ghế!");							
+								$(".error-msg").fadeIn(1000, function () {
+									$(".error-msg").css('display', 'block');
+								});
+								$(".error-msg").focus();	
+								event.preventDefault();
+							} else {
+								console.log(selectedGhe);
+								$("#maGhe").val(selectedGhe);
+								$("#totalGia").val(total);	
+						}
+					});
 				});
 			});
 		}

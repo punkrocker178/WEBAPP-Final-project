@@ -36,7 +36,11 @@
 	</div>
 	<section class="dang-chieu">
 		<div class="container">
-			<h2>Phim Đang Chiếu</h2>
+			<h2>Phim Đang Chiếu</h2><?php 
+			if($_SESSION['loggedIn'] == true && $_SESSION['staff'] == true){
+				echo "<div id = \"taoPhimBtn\" link=\"taoPhim.php\" class=\"btn btn-success\">Tạo Phim Mới</div>";
+			}
+			?>
 			<div class="row">
 				<?php
                         $model = new model();
@@ -55,8 +59,8 @@
 							}
 					?>
 						 	<div class="phim <?=$hidden?> col-lg-4 col-md-6 col-xs-6">
-								<a href="<?= $link?>"><img class="img-fluid rounded" src="<?= $image ?>"></a>
-								<button type="button" class="butt btn btn-success">Mua Vé</button>
+								<a class="phim-link" href="<?= $link?>"><img class="img-fluid rounded" src="<?= $image ?>"></a>
+								<button type="button" link="<?= $link?>" class="buyTicketBtn butt btn btn-success">Mua Vé</button>
 						 		<h4>
 						 			<?= $name ?>
 						 		</h4>

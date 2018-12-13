@@ -53,7 +53,7 @@ function getStatus($gheID,$flag,$gheOccupied){
 
 //view - lười nên để echo
 echo "<div class=\"container\">";
-echo "<div class=\"alert alert-danger error-msg col-sm-12 col-md-4 col-lg-3\" role =\"alert\"></div>";
+echo "<div  tabindex = '1' class=\"alert alert-danger error-msg col-sm-12 col-md-4 col-lg-3\" role =\"alert\"></div>";
 echo "<div class=\"row\">";
 echo "<div class=\"table-responsive col-md-8 col-sm-12\">";
 echo "<table class=\"table table-bordered table-sm\">";
@@ -117,7 +117,7 @@ echo "<div class=\"col-md-4 col-sm-12 info-box\">".
         "<span style = \"font-weight : bold\">Ghế chọn: </span><span id=\"gheChon\"></span>".
         "<p><span style = \"font-weight : bold\">Tổng cộng:</span></p>".
         "<p id = \"total\"></p>".
-        "<button id =\"thanhToan\" style=\"display : block\" type\"button\" class = \"btn btn-success\">Thanh Toán</button>".
+        "<button id =\"thanhToan\" style=\"display : block\" type=\"submit\" class = \"btn btn-success\">Thanh Toán</button>".
         "</form></div>";
 
 // End row

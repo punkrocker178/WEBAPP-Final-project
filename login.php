@@ -12,6 +12,8 @@
     }
 
     $user = new model();
+    $_SESSION['loggedIn'] = false;
+    $_SESSION['staff'] = false;
     if(isset($_POST['userID']) && isset($_POST['password'])){
         $username = $_POST['userID'];
         $password = $_POST['password'];
@@ -20,14 +22,12 @@
             $_SESSION['staff'] = isStaff($username,$user);
             $_SESSION['username'] = $_POST['userID'];
             $_SESSION['loggedIn'] = true;
-        }else{
-            echo "<script>$(\"#loginFailure\").modal()</script>";
         }
     }else if(isset($_POST['userFB'])){
-        $user = $_POST['userFB'];
-        $_SESSION['username'] = $user['email'];
+        $userFB = $_POST['userFB'];
+        $_SESSION['username'] = $userFB['email'];
         $_SESSION['loggedIn'] = true;
-        $_SESSION['staff'] = isStaff($username,$user);
+        $_SESSION['staff'] = isStaff($userFB['email'],$user);
     }
 
     if($_SESSION['loggedIn'] == true){
