@@ -125,8 +125,8 @@ $(document).ready(function () {
 				//Un-select - bỏ chọn
 				if ($(this).css('filter') == 'brightness(0.5)') {
 					$(this).css('filter', 'none');
-					// Sai
-					selectedGhe.pop();
+					//Xóa ghế đã chọn 
+					selectedGhe = deleteGhe($(this).text(),selectedGhe);
 					$("#gheChon").text(selectedGhe.toString());
 					//fade out transition
 					$(".error-msg").fadeOut(1000, function () {
@@ -171,3 +171,13 @@ $(document).ready(function () {
 	});
 
 });
+
+//Xóa ghế trong mảng các ghế đã chọn
+function deleteGhe(maGhe,selectedGhe){
+	for(i=0;i<selectedGhe.length;i++){
+		if(maGhe == selectedGhe[i]){
+			selectedGhe.splice(i,1);
+		}
+	}
+	return selectedGhe;
+}
