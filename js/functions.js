@@ -6,6 +6,9 @@ $(document).ready(function () {
 			  $("#loginModal").modal({show:true,backdrop:'static',keyboard:false});
 		})
 
+		//Khi nhấn nút menu, carrousel sẽ thụt xuông
+		$(".navbar-toggler").click(function(){$("#slide1").css("top","3em")})
+
 //Khi chọn file sẽ hiển thị đường dẫn và hình ảnh ngay tức thì
 	$("#customFile").change(function(){
 		console.log(this.files[0].name);

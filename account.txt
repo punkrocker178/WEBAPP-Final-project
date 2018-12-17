@@ -11,7 +11,15 @@ test@gmail.com          Pass: 123
 andiez@gmail.com        Pass: 123
 open_lvfpmst_user@tfbnw.net         Pass:graph
 bryviupczd_1544329706@tfbnw.net     Pass:testUser
+rzvqsmlyvr_1545058591@tfbnw.net		Pass: 123
+xuzrqvromd_1545058577@tfbnw.net		Pass: 123
 
 Facebook: Đăng nhập bằng facebook
 open_lvfpmst_user@tfbnw.net         Pass:testUser
 bryviupczd_1544329706@tfbnw.net     Pass:testUser
+rzvqsmlyvr_1545058591@tfbnw.net		Pass:testUser
+xuzrqvromd_1545058577@tfbnw.net 	Pass:testUser
+
+//Chua dang nhap
+blxvntrdyl_1545059823@tfbnw.net		Pass:testUser
+patricia_fsauisp_laustein@tfbnw.net	Pass:testUser

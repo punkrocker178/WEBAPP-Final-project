@@ -77,10 +77,11 @@ function fbRegister(response) {
       },function(data){
         if(data==true){
           $("#registerModal").modal('hide');
-          setTimeout(function () {
-            window.location = "http://localhost/WEBAPP-Final-project/index.php";
-          }, 2000);
+          // setTimeout(function () {
+          //   window.location = "http://localhost/WEBAPP-Final-project/index.php";
+          // }, 2000);
           $("#registerSuccess").modal();
+          checkLoginState();
         }
       },"json");
     });

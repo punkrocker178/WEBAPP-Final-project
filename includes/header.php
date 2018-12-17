@@ -44,9 +44,6 @@
 							<a class="nav-link" href="rap.php" >RẠP & GIÁ VÉ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">TIN TỨC</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="gioithieu.php" >GIỚI THIỆU</a>
 						</li>
 					</ul>
